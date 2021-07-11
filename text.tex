@@ -1,36 +1,14 @@
 \section{Domains, graphs, adjoints and spectrum}
 
-It is a fact of life that many of the most important operators which occur
-in mathematical physics are not bounded. In this chapter we will introduce
-some of the basic definitions and theorems necessary for dealing with
-unbounded operators on Hilbert spaces. The Hellinger-Toeplitz theorem
-(see Section III.5) says that an everywhere-defined operator $\op A$ which satisfies
-$(\op A \phi, \psi) = (\phi, \op A \psi) $ is necessarily a bounded operator suggesting that a general
-unbounded operator $\op T$ will only be defined on a dense linear subset of the
-Hilbert space.
-Thus an \textbf{operator} on a Hilbert space $\H$
-is a linear map
-from its domain, a linear subspace of $\H$, into $\H$. Unless we specify otherwise,
-we will always suppose that the domain is dense. This subspace, which we
-denote by $D( \op T)$, is called the \textbf{domain} of the operator $\op T$. So, to identify an
-unbounded operator on a Hilbert space one must first give the domain on
-which it acts and then specify how it acts on that subspace.
+It is a fact of life that many of the most important operators which occur in mathematical physics are not bounded. In this chapter we will introduce some of the basic definitions and theorems necessary for dealing with unbounded operators on Hilbert spaces. The Hellinger-Toeplitz theorem (see Section III.5) says that an everywhere-defined operator $\op A$ which satisfies $(\op A \phi, \psi) = (\phi, \op A \psi) $ is necessarily a bounded operator suggesting that a general unbounded operator $\op T$ will only be defined on a dense linear subset of the Hilbert space.
+Thus an \textbf{operator} on a Hilbert space $\H$ is a linear map from its domain, a linear subspace of $\H$, into $\H$. Unless we specify otherwise, we will always suppose that the domain is dense. This subspace, which we denote by $D( \op T)$, is called the \textbf{domain} of the operator $\op T$. So, to identify an unbounded operator on a Hilbert space one must first give the domain on which it acts and then specify how it acts on that subspace.
 
 \begin{example}[The position operator]
-Let $\H = \L{2}{\R}$ and let $D(\op T)$ be the
-set of functions $\phi$ in $\L{2}{\R}$ which satisfy $\intR x^2 |\phi(x)|^2 \, \D x < \infty$. For $\phi \in D(\op T)$
-define $(\op T \phi)(x) = x \phi(x)$. It is clear that $\op T$ is unbounded since if we choose $\phi$ to have support near plus or minus infinity, we can make $\norm{\op T \phi}$ as large as we
-like while keeping $\norm{\phi} =1$. Of course, even if $\phi \notin D(\op T)$, $x \phi(x)$ has a well-
-defined meaning as a function, but it is not in $\L{2}{\R}$. Thus, if we want to deal only with the Hilbert space $\L{2}{\R}$ we must restrict the domain of $\op T$. The
-domain we have chosen is the largest one for which the range is in $\L{2}{\R}$.
+Let $\H = \L{2}{\R}$ and let $D(\op T)$ be the set of functions $\phi$ in $\L{2}{\R}$ which satisfy $\intR x^2 |\phi(x)|^2 \, \D x < \infty$. For $\phi \in D(\op T)$ define $(\op T \phi)(x) = x \phi(x)$. It is clear that $\op T$ is unbounded since if we choose $\phi$ to have support near plus or minus infinity, we can make $\norm{\op T \phi}$ as large as we like while keeping $\norm{\phi} =1$. Of course, even if $\phi \notin D(\op T)$, $x \phi(x)$ has a well- defined meaning as a function, but it is not in $\L{2}{\R}$. Thus, if we want to deal only with the Hilbert space $\L{2}{\R}$ we must restrict the domain of $\op T$. The domain we have chosen is the largest one for which the range is in $\L{2}{\R}$.
 \end{example}
 
 \begin{example}
-Let $\H = \L{2}{\R}$ and $D(\op T)= \Schwartz{\R}$. On $D(\op T)$ define $\op T \psi = - \psi"(x) + x^2 \psi(x)$.
-If $\phi_n(x)$ is the $n$-th
-Hermite function (see the appendix
-to Section V.3), then $\phi_n \in D(\op T)$ and $\op T\phi_n(x) = (2n+1) \phi_n(x)$. Thus $\op T$ must
-be unbounded since it has arbitrarily large eigenvalues.
+Let $\H = \L{2}{\R}$ and $D(\op T)= \Schwartz{\R}$. On $D(\op T)$ define $\op T \psi = - \psi"(x) + x^2 \psi(x)$. If $\phi_n(x)$ is the $n$-th Hermite function (see the appendix to Section V.3), then $\phi_n \in D(\op T)$ and $\op T\phi_n(x) = (2n+1) \phi_n(x)$. Thus $\op T$ must be unbounded since it has arbitrarily large eigenvalues.
 \end{example}
 
 The notion of the graph of a linear transformation, introduced by von Neumann, is very useful for studying unbounded operators.
@@ -51,15 +29,11 @@ $\op T$ is called a closed operator if $\Gamma(\op T)$ is a closed subset of $\H
 \end{definition}
 
 \begin{definition}
-An operator $\op T$ is \textbf{closable} if it has a closed extension. Every
-closable operator has a smallest closed extension, called its \textbf{closure}, which we denote by $\o{\op T}$.   
+An operator $\op T$ is \textbf{closable} if it has a closed extension. Every closable operator has a smallest closed extension, called its \textbf{closure}, which we denote by $\o{\op T}$.   
 \end{definition}
 
 
-A natural way to try to obtain a closed extension of an operator $\op T$, is to take the closure of its graph in $\H \times \H$. The trouble with this is that $\Gamma(\op T)$ may
-not be the graph of an operator (for example, see Problem 1). However, most
-operators which we deal with will be symmetric operators (introduced
-Section VIII.2) and we will see that they always have closed extensions.
+A natural way to try to obtain a closed extension of an operator $\op T$, is to take the closure of its graph in $\H \times \H$. The trouble with this is that $\Gamma(\op T)$ may not be the graph of an operator (for example, see Problem 1). However, most operators which we deal with will be symmetric operators (introduced Section VIII.2) and we will see that they always have closed extensions.
 
 \begin{preposition}
 If $\op T$ is closable, then $\Gamma(\o{\op T}) = \o{\Gamma(\op T)}$.
@@ -111,14 +85,11 @@ Thus, $\phi_\varepsilon \in D(\op T)$ for each $\varepsilon >0$. What we have sh
 	\quad     
     \op T \phi_\varepsilon \overset{\L{2}{\R}} \longrightarrow \op T \phi \:.
 \end{align}
-Thus, the closure of the
-graph of $\op T$ contains the graph of $\op T_1$.
-The notion of adjoint operator can be extended to the unbounded case.
+Thus, the closure of the graph of $\op T$ contains the graph of $\op T_1$. The notion of adjoint operator can be extended to the unbounded case.
 \end{example}
 
 \begin{definition}
-Let $\op T$ be a densely defined linear operator on a Hilbert space
-$\H$. Let $D(\op T^\star)$ be the set of $\phi \in \H$ for which there is an $\eta \in \H$ with
+Let $\op T$ be a densely defined linear operator on a Hilbert space $\H$. Let $D(\op T^\star)$ be the set of $\phi \in \H$ for which there is an $\eta \in \H$ with
 \begin{align}
     (\op T \psi, \phi) = (\psi, \eta) \quad \text{for all } \psi \in D(\op T) \:.
 \end{align}
@@ -126,24 +97,17 @@ For each such $\phi \in D(\op T^\star)$ we define $\op T^\star \phi = \eta$. $\o
 \end{definition}
 
 
-We note that $\op S \subset \op T$ implies $\op T^\star \subset \op S^\star$.
-Notice that for $\eta$ to be uniquely determined by (VIII.1) we need the fact
-that $D(\op T)$ is dense. Unlike the case of bounded operators, the domain of $\op T^\star$ may not be dense as the following example shows. As a matter of fact it is possible to have $D(\op T^\star) = \set{0}$.
+We note that $\op S \subset \op T$ implies $\op T^\star \subset \op S^\star$. Notice that for $\eta$ to be uniquely determined by (VIII.1) we need the fact that $D(\op T)$ is dense. Unlike the case of bounded operators, the domain of $\op T^\star$ may not be dense as the following example shows. As a matter of fact it is possible to have $D(\op T^\star) = \set{0}$.
 
 \begin{example}
-Suppose that $f$ is a bounded measurable function, but that $f \notin \L{2}{\R}$. 
-Let $D(\op T) = \set{\psi \in \L{2}{\R} | \intR f(x) \psi(x) \, \D x < \infty  }$. $D(\op T)$ certainly
-contains all the $L^2$ functions with compact support so $D(\op T)$ is dense in $\L{2}{\R}$. Let $\psi_0$ be some fixed vector in $\L{2}{\R}$ and define $\op T \psi = (f, \psi) \psi_0$ for $\psi \in D(\op T)$. Suppose that $\phi \in D(\op T^\star)$, then for all $\psi \in D(\op T)$
+Suppose that $f$ is a bounded measurable function, but that $f \notin \L{2}{\R}$. Let $D(\op T) = \set{\psi \in \L{2}{\R} | \intR f(x) \psi(x) \, \D x < \infty  }$. $D(\op T)$ certainly contains all the $L^2$ functions with compact support so $D(\op T)$ is dense in $\L{2}{\R}$. Let $\psi_0$ be some fixed vector in $\L{2}{\R}$ and define $\op T \psi = (f, \psi) \psi_0$ for $\psi \in D(\op T)$. Suppose that $\phi \in D(\op T^\star)$, then for all $\psi \in D(\op T)$
 \begin{align}
     (\psi, \op T^\star \phi) = (\op T \psi, \phi) = ((f, \psi) \psi_0, \phi) = \o{(f, \psi)} (\psi_0, \phi) = (\psi, (\psi_0, \phi) f) \:. 
 \end{align}
-Thus $\op T^\star \phi = (\psi_0, \phi) f$. Since $f \notin \L{2}{\R}$, $(\psi_0, \phi) = 0$. Thus any $\phi \in D(\op T^\star)$
-is orthogonal to $\psi_0$, so $D(\op T^\star)$ is not dense. In fact, $D(\op T^\star)$ is just
-the vectors perpendicular to $\psi_0$, and on that domain $\op T^\star$ is the zero operator.
+Thus $\op T^\star \phi = (\psi_0, \phi) f$. Since $f \notin \L{2}{\R}$, $(\psi_0, \phi) = 0$. Thus any $\phi \in D(\op T^\star)$ is orthogonal to $\psi_0$, so $D(\op T^\star)$ is not dense. In fact, $D(\op T^\star)$ is just the vectors perpendicular to $\psi_0$, and on that domain $\op T^\star$ is the zero operator.
 \end{example}
 
-If the domain of $\op T^\star$ is dense, then we can define $\op T^\star = (\op T^\star)^\star$. There is a
-simple relationship between the notions of adjoint and closure.
+If the domain of $\op T^\star$ is dense, then we can define $\op T^\star = (\op T^\star)^\star$. There is a simple relationship between the notions of adjoint and closure.
 
 \begin{theorem}
 Let $\op T$ be a densely defined operator on a Hilbert space $\H$. Then:
@@ -160,12 +124,8 @@ We define a unitary operator $\op V$ on $\H \times \H$ by
 \begin{align}
     \op V [\phi, \psi] = [-\psi, \phi] \:.
 \end{align}
-Since $\op V$ is unitary, $\op V[E^\bot] = (\op V[E])^\bot$ for any subspace $E$. Let $\op T$ be a linear
-operator on $\H$ and suppose $[\phi, \eta] \subset \H \times \H$. Then $[\phi, \eta] \in \op V[\Gamma(\op T)]^\bot$ if and only if $\left( [\phi, \eta], [- \op T \psi, \psi] \right) = 0$ for all $\psi \in D(\op T)$ which holds if and only if
-$(\phi, \op T \psi) = (\eta, \psi)$ for all $\psi \in D(\op T)$, that is, if and only if $[\phi, \eta] \in \Gamma(\op T^\star)$. 
-Thus $\Gamma(\op T^\star) = \op V \left[\Gamma(\op T) \right]^\bot$. 
-Since $\op V[\Gamma(\op T)]^\bot$ is always a closed subspace\footnote[1]{MB: If $M$ is an subspace of $\H$, then $M^\bot$ is always closed. If $\set{y_n}_n \subset M^\bot$ which $y_n \rightarrow y$, then $(y_n,x) = 0$ for all $x \in M$ and so $(y,x) = 0$ for all $x \in M$, therefore $y \in \H$. Also $(M^\bot)^\bot = \o{M}$.} of $\H \times \H$, this
-proves (1).
+Since $\op V$ is unitary, $\op V[E^\bot] = (\op V[E])^\bot$ for any subspace $E$. Let $\op T$ be a linear operator on $\H$ and suppose $[\phi, \eta] \subset \H \times \H$. Then $[\phi, \eta] \in \op V[\Gamma(\op T)]^\bot$ if and only if $\left( [\phi, \eta], [- \op T \psi, \psi] \right) = 0$ for all $\psi \in D(\op T)$ which holds if and only if $(\phi, \op T \psi) = (\eta, \psi)$ for all $\psi \in D(\op T)$, that is, if and only if $[\phi, \eta] \in \Gamma(\op T^\star)$. Thus $\Gamma(\op T^\star) = \op V \left[\Gamma(\op T) \right]^\bot$. 
+Since $\op V[\Gamma(\op T)]^\bot$ is always a closed subspace\footnote[1]{MB: If $M$ is an subspace of $\H$, then $M^\bot$ is always closed. If $\set{y_n}_n \subset M^\bot$ which $y_n \rightarrow y$, then $(y_n,x) = 0$ for all $x \in M$ and so $(y,x) = 0$ for all $x \in M$, therefore $y \in \H$. Also $(M^\bot)^\bot = \o{M}$.} of $\H \times \H$, this proves (1).
 
 To prove (2), observe that $\Gamma(\op T)$ is a linear subset of $\H \times \H$ so
 \begin{align}
@@ -173,8 +133,7 @@ To prove (2), observe that $\Gamma(\op T)$ is a linear subset of $\H \times \H$ 
 \end{align}
 Thus, by the proof of (1), if $\op T^\star$ is densely defined, $\Gamma(\op T)$ is the graph of $\op T^{\star \star}$.
 
-Conversely, suppose that $D(\op T^\star)$ is not dense and that $ \psi \in D(\op T^\star)^\star$. A simple computation shows that $[\psi,0] \in [\Gamma(\op T^\star)]^\bot$ so $\op V\left[\op T(\op T^\star)\right]^\bot$ is not the
-graph of a (single-valued) operator. Since $\o{\Gamma(\op T)} = \op V\left[\op T(\op T^\star)\right]^\bot$, we see that $\op T$ is not closable.
+Conversely, suppose that $D(\op T^\star)$ is not dense and that $ \psi \in D(\op T^\star)^\star$. A simple computation shows that $[\psi,0] \in [\Gamma(\op T^\star)]^\bot$ so $\op V\left[\op T(\op T^\star)\right]^\bot$ is not the graph of a (single-valued) operator. Since $\o{\Gamma(\op T)} = \op V\left[\op T(\op T^\star)\right]^\bot$, we see that $\op T$ is not closable.
 
 To prove (3), notice that if $\op T$ is closable,
 \begin{align}
@@ -183,18 +142,13 @@ To prove (3), notice that if $\op T$ is closable,
 \end{proof}
 
 \begin{definition}
-Let $\op T$ be a closed operator on a Hilbert space 9. A complex
-number $\lambda$ is in the resolvent set $\rho(\op T)$, if $ \lambda \op I - \op T$ is a bijection of $D(\op T)$ onto $\H$ with a bounded inverse. If $\lambda \in \rho(\op T)$, operator $\op R_\lambda(\op T) = (\lambda \op I - \op T)^{-1}$ is called the \textbf{resolvent} of $\op T$
+Let $\op T$ be a closed operator on a Hilbert space 9. A complex number $\lambda$ is in the resolvent set $\rho(\op T)$, if $ \lambda \op I - \op T$ is a bijection of $D(\op T)$ onto $\H$ with a bounded inverse. If $\lambda \in \rho(\op T)$, operator $\op R_\lambda(\op T) = (\lambda \op I - \op T)^{-1}$ is called the \textbf{resolvent} of $\op T$
 at $\lambda$.
 \end{definition}
 
-For a point to be in the resolvent set of $\op T$, several conditions must be satisfied. These conditions are not all independent. For example, if $ \lambda \op I - \op T$ is a
-bijection of $D(\op T)$ onto $\H$, by the closed-graph theorem, its inverse is automatically bounded. For other relationships, see Problem 2.
+For a point to be in the resolvent set of $\op T$, several conditions must be satisfied. These conditions are not all independent. For example, if $ \lambda \op I - \op T$ is a bijection of $D(\op T)$ onto $\H$, by the closed-graph theorem, its inverse is automatically bounded. For other relationships, see Problem 2.
 
-The definitions of \textbf{spectrum}, \textbf{point spectrum}, and \textbf{residual spectrum} are the
-same for unbounded operators as they are for bounded operators. We will
-sometimes refer to the spectrum of nonclosed, but closable operators. In this
-case we always mean the spectrum of the closure.
+The definitions of \textbf{spectrum}, \textbf{point spectrum}, and \textbf{residual spectrum} are the same for unbounded operators as they are for bounded operators. We will sometimes refer to the spectrum of nonclosed, but closable operators. In this case we always mean the spectrum of the closure.
 
 \begin{theorem}
 Let $\op T$ be a closed densely defined linear operator. Then
@@ -249,9 +203,7 @@ so $\op S_\lambda$ is bounded. By the remark immediately after the definition of
 the basic criterion for self-adjointness}
 
 \begin{definition}
-A densely defined operator $\op T$ on a Hilbert space is called
-\textbf{symmetric} (or \textbf{Hermitian}) if $\op T \subset \op T^\star$, that is, if $D(\op T) < D(\op T^\star)$ and $\op T \phi = \op T^\star \phi$
-for all $\phi \in D(\op T)$. Equivalently, $\op T$ is symmetric if and only if
+A densely defined operator $\op T$ on a Hilbert space is called \textbf{symmetric} (or \textbf{Hermitian}) if $\op T \subset \op T^\star$, that is, if $D(\op T) < D(\op T^\star)$ and $\op T \phi = \op T^\star \phi$ for all $\phi \in D(\op T)$. Equivalently, $\op T$ is symmetric if and only if
 \begin{align}
     (\op T \phi, \psi) = (\phi, \op T \psi) \quad \text{for all } \phi, \psi \in D (\op T) \:.
 \end{align}
@@ -262,9 +214,7 @@ for all $\phi \in D(\op T)$. Equivalently, $\op T$ is symmetric if and only if
     $\op T$ is called \textbf{self-adjoint} if $\op T = \op T^\star$, that is, if and only if  $\op T$ is symmetric and $D(\op T) = D(\op T^\star)$.
 \end{definition}
 
-A symmetric operator is always closable, since $D(\op T^\star) \supset D(\op T)$ is dense in $\H$.
-If $\op T$ is symmetric, $\op T^\star$ is a closed extension of $\op T$, so the smallest closed extension
-$T^{\star \star}$ of $\op T$ must be contained in $\op T^\star$. Thus for symmetric operators, we have
+A symmetric operator is always closable, since $D(\op T^\star) \supset D(\op T)$ is dense in $\H$. If $\op T$ is symmetric, $\op T^\star$ is a closed extension of $\op T$, so the smallest closed extension $T^{\star \star}$ of $\op T$ must be contained in $\op T^\star$. Thus for symmetric operators, we have
 \begin{align}
     \op T \subset \op T^{\star \star} \subset \op T^\star \:.
 \end{align}
@@ -283,9 +233,7 @@ The distinction between closed symmetric operators and self-adjoint operators is
 A symmetric operator $\op T$ is called \textbf{essentially self-adjoint} if its closure $\o{\op T}$ is self-adjoint. If $\op T$ is closed, a subset $D \subset D(\op T)$ is called a \textbf{core} for $\op T$ if $\o{\op T|_{D}} = \op T$. 
 \end{definition}
 
-If $\op T$ is essentially self-adjoint, then it has one and only one self-adjoint
-extension, for suppose that $\op S$ is a self-adjoint extension of $\op T$. Then, $\op S$ is closed
-and thereby, since $\op S \supset \op T$, $\op S \supset \op T^{\star \star}$. Thus, $\op S = \op S* c (\op T^{\star \star})* = \op T^{\star \star}$, and so
+If $\op T$ is essentially self-adjoint, then it has one and only one self-adjoint extension, for suppose that $\op S$ is a self-adjoint extension of $\op T$. Then, $\op S$ is closed and thereby, since $\op S \supset \op T$, $\op S \supset \op T^{\star \star}$. Thus, $\op S = \op S* c (\op T^{\star \star})* = \op T^{\star \star}$, and so
 $\op S = \op T^{\star \star}$. The converse is also true; namely, if $\op T$ has one and only one self-adjoint extension, then $\op T$ is essentially self-adjoint (see Section X.1). Since
 $\op T^{\star} = \op T^{\star} = \op T^{\star \star \star}$, $\op T$ is essentially self-adjoint if and only if
 \begin{align}
@@ -294,9 +242,7 @@ $\op T^{\star} = \op T^{\star} = \op T^{\star \star \star}$, $\op T$ is essentia
 
 The importance of essential self-adjointness is that one is often given a nonclosed symmetric operator $\op T$. If $\op T$ can be shown to be essentially self-adjoint, then there is uniquely associated to $\op T$ a self-adjoint operator $\op T = \op T^{\star \star}$.
 Another way of saying this is that if $\op A$ is a self-adjoint operator, then to specify $\op A$ uniquely one need not give the exact domain of $\op A$ (which is often
-difficult), but just some core for $\op A$.
-Now, suppose that $\op T$ is a self-adjoint operator and that there is a
-$\phi \in D(\op T^{\star}) = D(\op T) $ so that $\op T^{\star} \phi = i \phi$. Then $\op T \phi = i \phi$ and
+difficult), but just some core for $\op A$. Now, suppose that $\op T$ is a self-adjoint operator and that there is a $\phi \in D(\op T^{\star}) = D(\op T) $ so that $\op T^{\star} \phi = i \phi$. Then $\op T \phi = i \phi$ and
 \begin{align}
     - i (\phi, \phi) =(i \phi, \phi) = (\op T \phi, \phi) = (\phi, \op T^\star \phi ) = (\phi, \op T \phi) = i (\phi, \phi) \:,
 \end{align}
@@ -318,11 +264,28 @@ statement, that if $\op T$ is a closed symmetric operator and $\op T^\star \phi 
 \begin{proof}
 We have just seen that (1) implies (2). Suppose that (2) holds; we will
 prove (3). Since $\op T^\star \phi = -i \phi$ has no solutions, $\Ran (\op T—i) $ must be dense.
-Otherwise, if $\psi \in \Ran ( \op T- i )^\bot$, we would have $((\op T-i) \phi, \psi) =0$ for all
-$\phi \in D(\op T)$, so $\psi \in D(\op T^\star)$ and $(\op T - i)^\star \psi = (\op T^\star + i) \psi = 0$ which is impossible since $\op T^\star = - i \psi $ has no solutions.
+Otherwise, if $\psi \in \Ran ( \op T- i )^\bot$, we would have $((\op T-i) \phi, \psi) =0$ for all $\phi \in D(\op T)$, so $\psi \in D(\op T^\star)$ and $(\op T - i)^\star \psi = (\op T^\star + i) \psi = 0$ which is impossible since $\op T^\star = - i \psi $ has no solutions.
 (Reversing this last argument we can show that if $\Ran ( \op T - i)$ is dense, the kernel of $\op T^\star + i $ is $\set{0}$.) Since $\Ran ( \op T - i)$  is dense, we need only prove it is closed to conclude that $\Ran ( \op T - i) = \H$ . But for all $\phi \in D(\op T)$
 \begin{align}
     \norm{(\op T - i) \phi}^2 = \norm{\op T \phi}^2 + \norm{\phi}^2 \:.
 \end{align}
 
+Thus if $\phi_n \in D(\op T)$ and $(\op T - i) \phi_n \rightarrow \psi_0$, we conclude that $\phi_n$ converges to some vector $\phi_0$ and $\op T \phi_n$ converges too. Since $\op T$ is closed, $\phi_0 \in D(\op T)$ and $(\op T - i) \phi_0 = \psi_0$. Thus, $\Ran(\op T - i)$ is closed, so $\Ran (\op T - i) = \H$. Similarly, $\Ran(T+i) = \H$.
+
+Finally, we will show that (3) implies (1). Let $\phi \in D(\op T^\star)$. Since $\Ran (\op T -i) = \H$, there is an $\eta \in D(\op T)$ so that $(\op T - i) \eta = (\op T^\star - i) \phi$. $D(\op T) \subset D(\op T^\star)$, so $\phi - \eta \in D(\op T^\star)$ and \begin{align}
+    (\op T^\star - i)(\phi - \eta) = 0 \:.
+\end{align}
+Since $\Ran(\op T +i) )=\H$, $\Ker (\op T^\star - i) = \set{0}$, so $\phi = \eta \in D(\op T)$. This proves that $D(\op T^\star) = D(\op T)$, so $\op T$ is self-adjoint.
+
 \end{proof}
+
+\begin{corollary}
+    Let $\op T$ be a symmetric operator on a Hilbert space. Then the following are equivalent:
+    \begin{enumerate}
+        \item $\op T$ is essentially self-adjoint.
+        \item $\Ker (\op T^\star \pm i) = \set{0}$.
+        \item $\Ran(\op T \pm i)$ are dense.
+    \end{enumerate}
+\end{corollary}
+
+We conclude with an example which shows that a symmetric operator may have many self-adjoint extensions. Lest the reader be misled we remark that a symmetric operator may have no self-adjoint extensions (see Problem 4 and Section X.1).
