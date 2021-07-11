@@ -289,3 +289,66 @@ Since $\Ran(\op T +i) )=\H$, $\Ker (\op T^\star - i) = \set{0}$, so $\phi = \eta
 \end{corollary}
 
 We conclude with an example which shows that a symmetric operator may have many self-adjoint extensions. Lest the reader be misled we remark that a symmetric operator may have no self-adjoint extensions (see Problem 4 and Section X.1).
+
+\begin{example}
+    Let $\op T = i \der{}{x}$ with \begin{align}
+        D(\op T) = \set{\phi | \phi \in AC[0,1], \: \phi(0)=0= \phi(1)} \:.
+    \end{align}
+
+A simple integration by parts shows that as an operator on $\L{2}{[0,1]}$, $\op T$ is
+symmetric. We begin by determining $\op T^\star$. Let $j_\varepsilon$ be the function defined in Example 3 of Section VIII.1. Fix $0 <\alpha < \beta <1 $ and define  \begin{align}
+    f_\varepsilon^{\alpha, \beta} (x) = j_\varepsilon(x-\beta) - j_\varepsilon(x - \alpha) \:, \\
+    g_\varepsilon^{\alpha, \beta} (x) = \int_0^x f_\varepsilon^{\alpha, \beta} (t) \, \D t \:.
+\end{align}
+Let $\psi \in D(\op T^\star)$. For $\varepsilon$ small enough, $g_\varepsilon^{\alpha, \beta} \in D(\op T)$ so \begin{align}
+    (\op T g_\varepsilon^{\alpha, \beta} , \psi) =(g_\varepsilon^{\alpha, \beta}, \op T^\star \psi) \:.
+\end{align}
+As $\varepsilon \rightarrow 0$, $-g_\varepsilon^{\alpha, \beta}$ converges to the characteristic function of $(\alpha, \beta)$ in $\L{2}{(0,1)}$ so 
+\begin{align}
+    (g_\varepsilon^{\alpha, \beta}, \op T^\star \psi) \rightarrow - \int_\alpha^\beta (\op T^\star \psi)(x) \, \D x \:.
+\end{align}
+The basic estimate of Example 3 shows that \begin{align}
+    \op J_\varepsilon \phi = \int_0^1 j_\varepsilon(x-t)\phi(t)\, \D t
+\end{align}
+converges in $\L{2}{\R}$ to $\phi$ if $\phi$ is continous. Moreover, each $\op J_\varepsilon$ is a bounded operator of norm not greater than one. For if $\psi \in \L{2}{(0,1)}$, then \begin{align}
+    |(\psi, \op J_\varepsilon \phi)| 
+    \leq&
+     \int_{[0,1]\times [0,1]} j_\varepsilon(x-t) |\phi(t)| |\psi(x)| \, \D x \D t 
+    =
+     \int_{[0,1]\times [0,1]} j_\varepsilon(y) |\phi(t)| |\psi(y+t)| \, \D y \D t 
+     \leq \\ 
+     \leq&
+      \norm{\phi} \norm{\psi} \int_{[0,1]} j_\varepsilon(y) \, \D y 
+     =
+      \norm{\phi} \norm{\psi} \:.
+\end{align}
+By an $\varepsilon/3$ argument, $\op J_\varepsilon \phi \overset{L^2}\rightarrow \phi$ for all $\phi \in \L{2}{[0,1]}$.
+Thus, the left side of (VIII.3)
+converges to $-[\psi(\beta) - \psi(\alpha)]$ in mean square as $\varepsilon \rightarrow 0$. So, for almost all $\alpha, \beta$ \begin{align}
+    i-[\psi(\beta) - \psi(\alpha)] = \int_\alpha^\beta (\op T^\star \psi)(x) \, \D x \:.
+\end{align}
+This mean that $\psi$ is absolutely continous (see the Notes for Section VIII.1) and \begin{align}
+    i \der{\psi}{x} = (\op T^\star \psi)(x) \:.
+\end{align}
+Thus, $\psi \in AC[0,1]$ and $\op T^\star \psi = i \der{\psi}{x} $. Conversely, integration by parts
+shows that any $\psi \in AC[0,1]$ is in the domain of $\op T^\star$ and $\op T^\star \psi = i \der{\psi}{x}$. Therefore $\op T^\star = i \der{}{x}$ on $D(\op T^\star) = AC[0,1]$.
+It is easy to see that $\op T$ is not essentially self-adjoint since \begin{align}
+    e^{\pm x} \in D(\op T^\star) \quad \text{and } \quad i \der{}{x} e^{\pm x} = \pm i e^{\pm x} \:.
+\end{align}
+
+In fact, $\op T$ is closed (Problem 6) so $\op T$ is a closed, symmetric but not self-adjoint operator.
+Does $\op T$ have any self-adjoint extensions? Yes, uncountably many different ones! Let $\alpha \in \C$, $|\alpha| = 1$, and define
+\begin{align}
+    \op T_\alpha = i \der{}{x} \quad \text{on} \quad D(\op T_\alpha) = \set{\phi | \phi \in AC[0,1] , \: \phi(0) = \alpha \phi(1)} \:.
+\end{align}
+
+Each of these operators $\op T_\alpha$ is a different self-adjoint extension of $\op T$ (Problem 7),
+Of course, each $\op T_\alpha$ is in turn extended by $\op T^\star$. These extensions are depicted in Figure VIII.1. The reason why there is exactly a circle of different possible extensions will be made clear in Section X.1.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 3 cm]{spectrumTalpha.png}
+    \caption{The self-adjoint extensions of $\op T$.}
+\end{figure}
+
+\end{example}
