@@ -1441,6 +1441,12 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/palatino/pplr9t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-Regular-tlf-t1.tfm
+INPUT /usr/share/texmf-dist/tex/latex/libertinus-type1/T1LibertinusMono-TLF.fd
+INPUT /usr/share/texmf-dist/tex/latex/libertinus-type1/T1LibertinusMono-TLF.fd
+INPUT /usr/share/texmf-dist/tex/latex/libertinus-type1/T1LibertinusMono-TLF.fd
+INPUT /usr/share/texmf-dist/tex/latex/libertinus-type1/T1LibertinusMono-TLF.fd
+INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusMono-Regular-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/mathpazo/zplmr7m.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/mathpazo/zplmr7y.tfm
@@ -1451,6 +1457,8 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/mathpazo/fplmbb.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/mathpazo/fplmbb.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusMono-Regular-tlf-t1.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusMono-Regular-tlf-t1--base.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/mathpazo/zplmr7m.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/mathpazo/fplmri.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
@@ -1475,7 +1483,6 @@ INPUT /home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/Figures//spect
 INPUT /home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/Figures//spectrumTalpha.png
 INPUT /home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/Figures//spectrumTalpha.png
 INPUT /home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/Figures//spectrumTalpha.png
-INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-Regular-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSans-Bold-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
@@ -1503,11 +1510,13 @@ INPUT /home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.aux
 INPUT /home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.out
 INPUT /home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.out
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_mfadfl.enc
+INPUT /usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_tll2u3.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_nufysp.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_sfissr.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_75t36g.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_cb34qf.enc
+INPUT /usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusMono-Regular.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Bold.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Bold.pfb
