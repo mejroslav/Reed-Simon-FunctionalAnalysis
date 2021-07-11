@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1626010795 "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.tex" "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.pdf" "main" 1626011380
-  "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.aux" 1626010797 3133 868af21ae42d7595dc4e650e1af08847 ""
+["pdflatex"] 1626011630 "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.tex" "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.pdf" "main" 1626011638
+  "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.aux" 1626011632 3133 868af21ae42d7595dc4e650e1af08847 ""
   "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.tex" 1626004503 3467 a00a14199975c7cd9c559be1af1904c9 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1617738065 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_75t36g.enc" 1617690507 3022 10a3376a8bb3e451b08862d68ba20e28 ""
@@ -206,15 +206,15 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1621847922 2812668 9101e020a189a1aed18c34070e599e11 ""
   "Figures//spectrumTalpha.png" 1626003944 10094 b298ef8cce77d2fa52a4af0dff6f00b9 ""
   "Styles/mathematics.tex" 1626001071 2394 039f79721dc0e5bcf93042f10a62d213 ""
-  "Styles/structure.tex" 1626004140 2847 37ca12de00434f530af0983125d002af ""
-  "main.aux" 1626010797 3133 868af21ae42d7595dc4e650e1af08847 "pdflatex"
-  "main.out" 1626010797 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Styles/structure.tex" 1626011629 2907 d187a17ce20c8487e95019ec7dccec5b ""
+  "main.aux" 1626011632 3133 868af21ae42d7595dc4e650e1af08847 "pdflatex"
+  "main.out" 1626011631 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main.tex" 1626004503 3467 a00a14199975c7cd9c559be1af1904c9 ""
-  "text.tex" 1626011379 26509 a94a428322d28bc78ec60fd213399c23 ""
+  "text.tex" 1626011638 26509 a94a428322d28bc78ec60fd213399c23 ""
   (generated)
   "main.out"
-  "main.pdf"
-  "main.aux"
   "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.log"
   "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.pdf"
   "main.log"
+  "main.aux"
+  "main.pdf"

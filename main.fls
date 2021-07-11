@@ -1366,7 +1366,6 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-Bold-tlf-t1.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-Italic-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 INPUT /usr/share/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 INPUT /usr/share/texmf-dist/tex/latex/psnfss/ufplmbb.fd
@@ -1394,8 +1393,6 @@ INPUT /usr/share/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusSerif-Bol
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-Bold-tlf-t1--base.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /usr/share/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusSerif-Italic-tlf-t1.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-Italic-tlf-t1--base.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/palatino/pplr9t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
@@ -1415,6 +1412,7 @@ INPUT /usr/share/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusSerif-Bol
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-Bold-tlf-t1--base.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusSans-Regular-tlf-t1.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSans-Regular-tlf-t1--base.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-Italic-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-Regular-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-Regular-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSans-Regular-tlf-t1.tfm
@@ -1425,6 +1423,8 @@ INPUT /usr/share/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusSans-Regu
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSans-Regular-tlf-sc-t1--base.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusSans-Regular-tlf-t1.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSans-Regular-tlf-t1--base.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusSerif-Italic-tlf-t1.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-Italic-tlf-t1--base.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/mathpazo/zplmr7t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/palatino/pplr9t.vf
