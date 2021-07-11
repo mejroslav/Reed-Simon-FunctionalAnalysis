@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1626013309 "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.tex" "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.pdf" "main" 1626013311
-  "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.aux" 1626013311 3133 868af21ae42d7595dc4e650e1af08847 ""
+["pdflatex"] 1626013595 "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.tex" "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.pdf" "main" 1626013615
+  "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.aux" 1626013597 3133 846c9abde7f8e856297301fe9a361ad2 ""
   "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.tex" 1626013306 3467 a00a14199975c7cd9c559be1af1904c9 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1617738065 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_75t36g.enc" 1617690507 3022 10a3376a8bb3e451b08862d68ba20e28 ""
@@ -208,14 +208,14 @@
   "Figures//spectrumTalpha.png" 1626003944 10094 b298ef8cce77d2fa52a4af0dff6f00b9 ""
   "Styles/mathematics.tex" 1626001071 2394 039f79721dc0e5bcf93042f10a62d213 ""
   "Styles/structure.tex" 1626013073 2925 e1b9485e29fcc5cdef06b3b61f56ab9a ""
-  "main.aux" 1626013311 3133 868af21ae42d7595dc4e650e1af08847 "pdflatex"
-  "main.out" 1626013310 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.aux" 1626013597 3133 846c9abde7f8e856297301fe9a361ad2 "pdflatex"
+  "main.out" 1626013597 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main.tex" 1626013306 3467 a00a14199975c7cd9c559be1af1904c9 ""
-  "text.tex" 1626013041 26509 c8661dbe5d6ee8ffeb576751cbf93244 ""
+  "text.tex" 1626013614 26545 0b0ec7c61e1f996738450c4df30200af ""
   (generated)
-  "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.pdf"
-  "main.aux"
   "main.out"
-  "main.pdf"
   "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.log"
+  "main.aux"
   "main.log"
+  "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.pdf"
+  "main.pdf"

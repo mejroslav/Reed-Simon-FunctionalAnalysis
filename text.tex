@@ -186,14 +186,16 @@ The proof that $\op T_1$ and $\op T_2$ are closed is left as an exercise (Proble
 for all $\lambda \in \C$. As for the $\op T_2$, the operator \begin{align}
     (\op S_\lambda g)(x) = i \int_0^x e^{-i \lambda(x-s)} g(s) \, \D s
 \end{align}
-satisfies $(\lambda I - \op T_2) \op S_\lambda = \op I$ and $\op S_\lambda (\lambda \op I - \op T_2)$ is the identity on $D(\op T_2)$. Moreover, \begin{align}
-    \norm{\op S_\lambda g}_2^2 = \int_0^1 |(\op S_\lambda g)(x)|^2 \, \D x 
+satisfies $(\lambda I - \op T_2) \op S_\lambda = \op I$ and $\op S_\lambda (\lambda \op I - \op T_2)$ is the identity on $D(\op T_2)$. Moreover, 
+\begin{align}
+    \norm{\op S_\lambda g}_2^2 =& \int_0^1 |(\op S_\lambda g)(x)|^2 \, \D x 
     \leq \left( \sup_{x \in [0,1]} |(\op S_\lambda g)(x)| \right)^2 
-    \leq \\ \leq
-     \left( \sup_{x \in [0,1]} \int_0^x |e^{-i\lambda(x-s)} g(s)|  \, \D s \right)^2
-    \leq \left( \sup_{x \in [0,1]} \int_0^x \left|e^{-i\lambda(x-s)} g(s) \right|^2  \, \D s \right)
+    \leq \\ \leq&
+     \left( \sup_{x \in [0,1]} \int_0^x |e^{-i\lambda(x-s)} g(s)|  \, \D s \right)^2 \nonumber
+    \leq \\ \leq&
+    \left( \sup_{x \in [0,1]} \int_0^x \left|e^{-i\lambda(x-s)} g(s) \right|^2  \, \D s \right)
     \left( \sup_{x \in [0,1]} \int_0^x |g(s)|^2 \, \D s \right)
-    \leq C(\lambda) \norm{g}_2^2 \:,
+    \leq C(\lambda) \norm{g}_2^2 \:, \nonumber
 \end{align}
 so $\op S_\lambda$ is bounded. By the remark immediately after the definition of resolvent set, we need only have shown that $\lambda \op I - \op T_2$ is a bijection to conclude that $\op S_\lambda$ is bounded. So, we could have avoided the above computation.
 
