@@ -1,0 +1,60 @@
+\section{Ergodic theory: An Introducion}
+
+In this section we give a brief introduction to ergodic theory. For our discussion we need several concepts not formally defined until Chapter VI: adjoint operators, projection operators, and the kernel and range of an operator. Any reader not already familiar with these concepts should consult Chapter VI. We give this discussion here because ergodic theory illustrates nicely the power and limitations of Hilbert-space methods and serves as a nice example of the main theme of these books, namely the interplay between functional analysis and mathematical physics. We will see that it is useful to reformulate the question of why macroscopic systems approach equilibrium in terms of abstract spaces, but that one must pay a price: The natural question in the abstract setting is slightly different from the original question and one may be tempted to accept weaker results. The statement \enquote{any system approaches an equilibrium state} is sometimes known as the zeroth law of thermodynamics. From a microscopic point of view it is perhaps surprising that any system should approach equilibrium since microscopically there is no steady state and therefore no equilibrium.
+Nevertheless, any attempt at a microscopic justification of thermodynamics must explain why the zeroth laws holds macroscopically. There is far from universal agreement among physicists as to what constitutes a justification of the zeroth law, but we would like to avoid a discussion of the pros and cons of the many different approaches which have been suggested (however, see the Notes). The approach that we use is generally accepted by most physicists. The first basic idea is that thermodynamical systems undergo fluctuations (see Problem 17); put differently, by their very nature the laws of thermodynamics are not absolute statements about a system at a fixed time but are statements about measurements made ver time periods long with respect to some characteristic times such as relaxation or collision times. Thus, thermodynamics deals with average measurements of observables over a time period $T$. Since the collision times, etc., are dependent on the dynamics, one can only hope to prove thermodynamic statements about the limit as $T \rightarrow \infty$.
+How large $T$ has to be for the average over the interval $T$ to be approximately equal to the limit is a detailed dynamical question, but in specific cases one would hope to be able to prove something.
+Let us suppose that we describe the state of a classical mechanical system
+by a point in some phase space $\Gamma$. For each time $t$; there is a map $\op T_t : \Gamma \to \Gamma$, where $\op T_t x$ is the state which results by taking a state $x$ at $t_0$ and waiting until $t_0 + t$ (we are assuming time-translation invariance so $t_0$ never enters).
+Obviously, $\op T_{t+s} = \op T_t \op T_s$. In classical mechanics, the observables of the system like energy or angular momentum are functions on phase discussion above suggests that we study
+\begin{align}
+    \lim_{T \rightarrow \infty} \frac{1}{T} \int_0^T f(\op T_t x) \, \D t \:.
+\end{align}
+We would like to show that the limit exists, at least for continuous functions. Typically $\Gamma$ is a metric space, so \enquote{continuous} has a meaning. Not only would we like the limit to exist, but it should be independent of the initial point $x$ or at least only dependent on a few \enquote*{macroscopic} observables we can associate with an equilibrium state. For systems which are time-translation independent, the energy is a conserved quantity, so the average-energy is the initial energy—thus we cannot hope for measurements to be independent of the initial energy. Therefore, for each energy $E$ we look at the constant energy surface, $\Omega_E$, in phase space, and for each  $w \in \Omega_E$ and each continuous function $f$ on $\Omega_E$ we hope that
+\begin{align}
+    \lim_{T \rightarrow \infty} \frac{1}{T} \int_0^T f(\op T_t w) \, \D t
+\end{align}
+exists and is a number, $\mu(f)$, independent of $w$. The map $f \mapsto \mu(f)$ clearly has three properties:
+\begin{enumerate}
+    \item $\mu(1)=1$.
+    \item $\mu$ is linear.
+    \item $\mu(f) \geq 0$ if $f \geq 0$.
+\end{enumerate}
+We will eventually see (Section I[V.4) that such a $\mu$ is always associated with a measure $\hat{mu}$ on $\Omega_E$ with $\hat{\mu}(\Omega_E) = 1$, so that
+\begin{align}
+    \mu(f) = \int_{\Omega_E} f(w) \, \D \hat{\mu}(w) \:.
+\end{align}
+From now on we denote linear functional $\mu$ and the measure $\hat{\mu}$, by the same letter $\mu$.
+
+To summarize: We have shown that if
+\begin{align}
+    \lim_{T \rightarrow \infty} \frac{1}{T} \int_0^T f(\op T_t w) \, \D t
+\end{align}
+exists for each fixed $w$ and is independent of $w \in \Omega_E$, then there is a measure $\mu$ on $\Omega_E$ so that
+\begin{align}
+    \lim_{T \rightarrow \infty} \frac{1}{T} \int_0^T f(\op T_t w) \, \D t = \int_{\Omega_E} f(w) \, \D \mu(w) \:.
+\end{align}
+The measure $\mu$ has a very important property. Let $s$ be fixed and suppose $\chi_F$ is the characteristic function of a measurable set $F \subset \Omega_E$. The \begin{align}
+    \frac{1}{T} \int_0^T \chi_{\op T_s^{-1} F} (\op T_t w) \, \D t = \frac{1}{T} \int_0^T \xi_F (\op T_s \op T_t w) \, \D t
+\end{align}
+so if the $\lim_{T \rightarrow \infty}$ exists, then $\mu(\op T_s^{-1}F) = \mu(F)$, that is, the measure is \textbf{invariant}. We also say that $\op T$ is \textbf{measure preserving}. Classical mechanical systems come equipped with a natural invariant measure: if $\Gamma = \R^{6N}$ ($N$ is the number of particles), the measure $\D^{3N} q \D^{3N} p$ is known to be invariant under the Hamiltonian flow (Liouville’s theorem). This measure has a restriction to $\Omega_E$ given formally by
+\begin{align}
+    \mu_E(F) = \int_F \delta \left[ H(p,q) - E \right] \, \D^{3N} p \D^{3N} q
+\end{align}
+where $H(p,q)$ is the Hamiltonian.
+Explicitly, if we pick a set of local coordinates at $x \in \Omega_E$, say $Q_1, \cdots, Q_{6N-1}$, which are orthogonal and normalized, then
+\begin{align}
+    \D \mu_E = C \D^{6N-1} Q/ |\nabla H| \:,
+\end{align}
+$C$ is picked so that $\mu_E(\Omega_E) = 1$. Thus, the goal in justifying the zeroth law is to consider \begin{align}
+    \op M_T(f)(w) = \frac{1}{T} \int_0^T f(\op T_t w) \, \D t
+\end{align}
+and to prove that in a suitable sense the function $(\op M_T f)(w)$ converges as $T \rightarrow \infty$ to the constant function with value
+\begin{align}
+    \int_{\Omega_E} f(w) \, \D \mu_E(w) \:.
+\end{align}
+
+Notice that if we can prove this, we will have proven much more; not only will we have shown that measurements over long periods of time are independent of the initial conditions (except for the energy), but we will have shown that the equilibrium state is described by a measure in phase space and this measure is
+\begin{align}
+    \int_F \delta \left[ H(p,q) - E \right] \, \D^{3N} p \D^{3N} q
+\end{align}
+the \enquote{microcanonical ensemble}.
