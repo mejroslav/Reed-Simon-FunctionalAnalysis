@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1626121294 "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.tex" "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.pdf" "main" 1626121296
-  "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.aux" 1626121296 3918 57b0faf13970fcc9546a43879197f907 ""
+["pdflatex"] 1626125201 "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.tex" "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.pdf" "main" 1626128452
+  "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.aux" 1626125203 3918 57b0faf13970fcc9546a43879197f907 ""
   "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.tex" 1626117688 3510 392154771d2f9df0f73a0891b0ae2ee6 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1617738065 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_75t36g.enc" 1617690507 3022 10a3376a8bb3e451b08862d68ba20e28 ""
@@ -212,18 +212,18 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1617738065 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1621847930 5045527 a0ef06d06af438d62994481e52c2af5f ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1621847922 2812668 9101e020a189a1aed18c34070e599e11 ""
-  "Chapters/Hilbert.tex" 1626121293 15195 38f41ec703f4c8f827d702b22c954ce3 ""
+  "Chapters/Hilbert.tex" 1626128451 15197 b95f1f6d46e13ca6b6e42ac08dbd2384 ""
   "Chapters/unbounded.tex" 1626117687 26657 3606605964b781336da0cabd500d719f ""
   "Figures//spectrumTalpha.png" 1626003944 10094 b298ef8cce77d2fa52a4af0dff6f00b9 ""
   "Styles/mathematics.tex" 1626041745 2496 e92cb47ad9c0ae3314e22e5d936cd9aa ""
   "Styles/structure.tex" 1626117650 2951 7f50965b4b314f02b06137cf5cedd9e3 ""
-  "main.aux" 1626121296 3918 57b0faf13970fcc9546a43879197f907 "pdflatex"
-  "main.out" 1626121295 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.aux" 1626125203 3918 57b0faf13970fcc9546a43879197f907 "pdflatex"
+  "main.out" 1626125203 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main.tex" 1626117688 3510 392154771d2f9df0f73a0891b0ae2ee6 ""
   (generated)
   "main.log"
   "main.aux"
   "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.log"
+  "main.out"
   "/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.pdf"
   "main.pdf"
-  "main.out"
