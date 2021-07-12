@@ -1,11 +1,15 @@
-<<<<<<< HEAD
 \section{Ergodic theory: An Introducion}
 
-In this section we give a brief introduction to ergodic theory. For our discussion we need several concepts not formally defined until Chapter VI: adjoint operators, projection operators, and the kernel and range of an operator. Any reader not already familiar with these concepts should consult Chapter VI. We give this discussion here because ergodic theory illustrates nicely the power and limitations of Hilbert-space methods and serves as a nice example of the main theme of these books, namely the interplay between functional analysis and mathematical physics. We will see that it is useful to reformulate the question of why macroscopic systems approach equilibrium in terms of abstract spaces, but that one must pay a price: The natural question in the abstract setting is slightly different from the original question and one may be tempted to accept weaker results. The statement \enquote{any system approaches an equilibrium state} is sometimes known as the zeroth law of thermodynamics. From a microscopic point of view it is perhaps surprising that any system should approach equilibrium since microscopically there is no steady state and therefore no equilibrium.
-Nevertheless, any attempt at a microscopic justification of thermodynamics must explain why the zeroth laws holds macroscopically. There is far from universal agreement among physicists as to what constitutes a justification of the zeroth law, but we would like to avoid a discussion of the pros and cons of the many different approaches which have been suggested (however, see the Notes). The approach that we use is generally accepted by most physicists. The first basic idea is that thermodynamical systems undergo fluctuations (see Problem 17); put differently, by their very nature the laws of thermodynamics are not absolute statements about a system at a fixed time but are statements about measurements made ver time periods long with respect to some characteristic times such as relaxation or collision times. Thus, thermodynamics deals with average measurements of observables over a time period $T$. Since the collision times, etc., are dependent on the dynamics, one can only hope to prove thermodynamic statements about the limit as $T \rightarrow \infty$.
+In this section we give a brief introduction to ergodic theory. For our discussion we need several concepts not formally defined until Chapter VI: adjoint operators, projection operators, and the kernel and range of an operator. Any reader not already familiar with these concepts should consult Chapter VI. We give this discussion here because ergodic theory illustrates nicely the power and limitations of Hilbert-space methods and serves as a nice example of the main theme of these books, namely the interplay between functional analysis and mathematical physics. We will see that it is useful to reformulate the question of why macroscopic systems approach equilibrium in terms of abstract spaces, but that one must pay a price: The natural question in the abstract setting is slightly different from the original question and one may be tempted to accept weaker results. 
+
+The statement \enquote{any system approaches an equilibrium state} is sometimes known as the zeroth law of thermodynamics. From a microscopic point of view it is perhaps surprising that any system should approach equilibrium since microscopically there is no steady state and therefore no equilibrium.
+
+Nevertheless, any attempt at a microscopic justification of thermodynamics must explain why the zeroth laws holds macroscopically. There is far from universal agreement among physicists as to what constitutes a justification of the zeroth law, but we would like to avoid a discussion of the pros and cons of the many different approaches which have been suggested (however, see the Notes). The approach that we use is generally accepted by most physicists.
+
+The first basic idea is that thermodynamical systems undergo fluctuations (see Problem 17); put differently, by their very nature the laws of thermodynamics are not absolute statements about a system at a fixed time but are statements about measurements made ver time periods long with respect to some characteristic times such as relaxation or collision times. Thus, thermodynamics deals with average measurements of observables over a time period $T$. Since the collision times, etc., are dependent on the dynamics, one can only hope to prove thermodynamic statements about the limit as $T \rightarrow \infty$.
 How large $T$ has to be for the average over the interval $T$ to be approximately equal to the limit is a detailed dynamical question, but in specific cases one would hope to be able to prove something.
-Let us suppose that we describe the state of a classical mechanical system
-by a point in some phase space $\Gamma$. For each time $t$; there is a map $\op T_t : \Gamma \to \Gamma$, where $\op T_t x$ is the state which results by taking a state $x$ at $t_0$ and waiting until $t_0 + t$ (we are assuming time-translation invariance so $t_0$ never enters).
+
+Let us suppose that we describe the state of a classical mechanical system by a point in some phase space $\Gamma$. For each time $t$; there is a map $\op T_t : \Gamma \to \Gamma$, where $\op T_t x$ is the state which results by taking a state $x$ at $t_0$ and waiting until $t_0 + t$ (we are assuming time-translation invariance so $t_0$ never enters).
 Obviously, $\op T_{t+s} = \op T_t \op T_s$. In classical mechanics, the observables of the system like energy or angular momentum are functions on phase discussion above suggests that we study
 \begin{align}
     \lim_{T \rightarrow \infty} \frac{1}{T} \int_0^T f(\op T_t x) \, \D t \:.
@@ -59,6 +63,136 @@ Notice that if we can prove this, we will have proven much more; not only will w
     \int_F \delta \left[ H(p,q) - E \right] \, \D^{3N} p \D^{3N} q
 \end{align}
 the \enquote{microcanonical ensemble}.
-=======
 
->>>>>>> ed9c31b4ebf4a6d2525dcc6737839682c278a61d
+Hilbert space methods are so powerful that as soon as one has a measure, it is tempting to try to reformulate the problem in terms of $\L{2}{\Omega_E, \D \mu_E}$.
+Therefore, if $f \in \L{2}{\Omega_E, \D \mu_E}$, we define a map $f \overset{\op U_t}\mapsto f \circ \op T_t$, that is, \begin{align}
+    (\op U_t f)(w) = f(\op T_t w) \:.
+\end{align}
+
+\begin{lemma}[Koopman's lemma]
+    $\op U_t$ is a unitary map of $\L{2}{\Omega_E, \D \mu_E}$ onto $\L{2}{\Omega_E, \D \mu_E}$.
+\end{lemma}
+\begin{proof}
+    \begin{align}
+        (\op U_t f, \op U_t g) =
+         \int_{\Omega_E} \overline{f(\op T_t w)} g(\op T_t w) \, \D \mu_E (w) =
+         \int_{\Omega_E} \overline{f(y} g(y) \, \D \mu_E (\op T_t^{-1} y) =
+         \int_{\Omega_E} \overline{f(y} g(y) \, \D \mu_E (y) = (f,g) \:,
+    \end{align}
+    where we have used the invariance of the measure $\mu_E$. Since $\op U_t \op U_{-t} = \op U_0 = \op I$, $\op U$ is invertible and thus unitary.
+\end{proof}
+
+We want to study
+\begin{align}
+    \frac{1}{T} \int_0^T (\op U_1 f)(w) \, D \mu(w) \:,
+\end{align}
+but it is simpler to consider the discrete analogue \begin{align}
+    \frac{1}{N} \sum_{m=0}^{N-1} \op U^m f \:.
+\end{align}
+The following elegant result settles the convergence question in the discrete case. Problem 18 extends the discrete result to the continuous case.
+
+\begin{theorem}[Mean ergodic theorem, or von Neumann's ergodic theorem]
+Let $\op U$ be a unitary operator on a Hilbert space $\H$. Let $\op P$ be the orthogonal projection onto $\set{\psi | \psi \in \H, \op U \psi = \psi}$. Then, for any $f \in \H$,
+\begin{align}
+    \lim_{N \rightarrow \infty} \frac{1}{N} \sum_{n=0}^{N-1} \op U^n f = \op P f \:. 
+\end{align}
+\end{theorem}
+
+We first prove an elementary technical lemma:
+\begin{lemma}
+    \begin{enumerate}
+        \item If $\op U$ is unitary, $\op U f = f$ if and only if $\op U^\star f = f$.
+        \item For any operator on a Hilbert space $\H$, $(\Ran \op A)^\bot = \Ker \op A^\star$.
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    To prove (2), notice that both conditions are equivalent to $f = \op U^{-1} f$. To prove (1), observe that $\psi \in \Ker \op A^\star$ means that $(\phi, \op A^\star \psi) =0$ for all $\phi$ in $\H$. But, $\psi \in (\Ran \op A)^\bot$ means that $(\op A \phi, \psi) = 0$ for all $\phi \in \H$. (2) now follows from the definition of adjoint.
+\end{proof}
+
+\begin{proof}[Proof of the mean ergodic theorem]
+    First let $f = g - \op U g$, that is, $f \in \Ran (\op I - \op U)$.
+    Then, \begin{align}
+        \norm{\frac{1}{N} \sum_{n=0}^{N-1} \op U^n f} = \norm{\frac{1}{N}(g - \op U^N g)} \leq \frac{2}{N} \norm{g} \overset{N \rightarrow \infty}\rightarrow 0 \:.
+    \end{align}
+    By an $\varepsilon/3$ argument \begin{align}
+        \frac{1}{N} \sum_{n=0}^{N-1} \op U^n f \rightarrow 0 \quad \text{for any} \quad f \in \o{\Ran (\op I - \op U)} \:.
+    \end{align}
+    By the lemma, \begin{align}
+        \left(\Ran(\op I - \op U) \right)^\bot = \Ker (\op I - \op U^\star) = \set{\psi | \op U^\star \psi = \psi} = \set{\psi | \op U \psi = \psi} \:.
+    \end{align}
+    Therefore, $\op P f = 0$ if and only if $f \in \o{\Ran (\op I - \op U)}$.
+    Now, suppose $\op P f = f$. Trivially,
+    \begin{align}
+        \frac{1}{N} \sum_{n=0}^{N-1} \op U^n f = f
+    \end{align}
+    converges to $f = \op P f$. Thus the limit statement hold on $\o{\Ran (\op I - \op U)}$ and on $\Ker(\op I - \op U^\star)$ and therefore on $\o{\Ran (\op I - \op U)} \oplus \Ker(\op I - \op U^\star)$, which is all of $\H$ by the projection theorem and (2) above.
+\end{proof}
+
+In the continuous case $\op U_t f = f \circ \op T_t$, what are the functions in $\L{2}{\Omega_E, \D \mu_E}$ which satisfy $\op U_t f = f $? Clearly, the constant functions are invariant.
+
+\begin{definition}
+    $\op T_t$ is called \textbf{ergodic} if the constant functions are the only functions on $\L{2}{\Omega_E, \D \mu_E}$ for which $ f \circ \op T_t = f$ (as $L^2$ function) for all $t$.
+\end{definition}
+
+Given the continuous analogue of the mean ergodic theorem (Problem 18)
+we have:
+\begin{corollary}
+    Let $\op T_t$ be ergodic. Then for any $f \in \L{2}{\Omega_E, \D \mu_E}$, \begin{align}
+        L^2 - \lim_{T \rightarrow \infty} \frac{1}{T} \int_0^T f (\op T_t w) \, \D t = \int_{\Omega_E} f(y) \, \D \mu_E(y) \:. \label{eq:II.4}
+    \end{align}
+\end{corollary}
+
+\begin{proof}
+    In this case $\set{\psi | \op U \psi = \psi}$ is one dimensional. Thus $\op P \psi$ is a constant $C$ and \begin{align}
+        C = (1 ,\psi) = \int_{\Omega_E} \psi(w) \, \D \mu_E(w) \:.
+    \end{align}
+\end{proof}
+Notice that if \eqref{eq:II.4} holds then $\op P \psi$ is constant so that $\op T_t$ must be ergodic;
+thus ergodicity is necessary and sufficient for \eqref{eq:II.4} to hold.
+It is sometimes useful to express ergodicity in terms of the measure.
+
+\begin{proposition}
+    $\op T_t$ is ergodic if and only if for all measurable sets $F \in \Omega_E$.
+\end{proposition}
+
+\begin{proof}
+Suppose $\op T_t$ is ergodic and $\op T_t^{-1} F = F$ for all $t$. Then $f = \chi_F$ is an invariant function so $\chi_F$ is constant a.e., which implies $\mu_E(F) = 0$ or $\mu_E(F) = 1$. 
+
+Conversely, suppose that the second condition holds. Then $\set{w | f(w) < \alpha }$ is invariant under $\op T_t$ so $f(w) < a$ ae. or $f(w) \geq a$ a.e. Since this is true for all $a$, $f(w)$ is constant a.e. 
+\end{proof}
+
+The condition that $\op T_t^{-1} F = F$ implies $\mu_E(F) = 0$ or $\mu_E(F) = 1$ is sometimes called \textbf{metric transitivity}.
+Let us take stock of what we have proven. We have derived a necessary and
+sufficient condition on the flow $\op T_t$ so that
+\begin{align}
+    \lim_{T \rightarrow \infty} \frac{1}{T} \int_0^T f(\op T_t w) \, \D t
+\end{align}
+is precisely what we want it to be, but not in the sense of convergence for each $w$; instead, we have $L^2$ convergence of ${1}{T} \int_0^T f(\op T_t w) \, \D t$ to the constant
+function \begin{align}
+    \int_{\Omega_E} f(w) \, \D \mu(w) \:.
+\end{align}
+
+This is not surprising since pointwise convergence is not an $L^2$ notion. By using Hilbert space methods we have given up the chance of proving that
+\begin{align}
+     \frac{1}{T} \int_0^T f(\op T_t w) \, \D t
+\end{align}
+converges pointwise for each $w$ as $T \rightarrow \infty$. 
+Actually, the pointwise limit does exist but this must be proven by entirely different methods. We state the result:
+\begin{theorem}[Individual or Birkhoff ergodic theorem]
+    Let $\op T$ be a measure preserving transformation on a measure space $(\Omega, \mu)$. Them for any $f \in \L{1}{\Omega, \mu}$, \begin{align}
+        \lim_{N \rightarrow 0} \frac{1}{N} \sum_{N=0}^{N-1} f(\op T^n x)
+    \end{align}
+    exist pointwise a.e. and is some function $f^\star \in \L{1}{\Omega, \D \mu}$ satisfying $f^\star (\op T x) = f^\star (x)$. If $\mu(\Omega) < \infty$, then \begin{align}
+        \int_\Omega f^\star (x) \, \D \mu(x) = \int_\Omega f(x) \, \D \mu (x) \:.
+    \end{align}
+    Furthermore, if $\mu$ is ergodic and $\mu(\Omega) = 1$, then \begin{align}
+        \frac{1}{N} \sum_{n=0}^{N-1} f(\op T^n x) \overset{N \rightarrow \infty}\rightarrow \int_\Omega f(y) \, \D \mu(y)
+    \end{align}
+    for almost all $x$.
+\end{theorem}
+
+This theorem is closer to what one wants to justify statistical mechanics than the von Neumann theorem, and it is fashionable to say that the von Neumann theorem is unsuitable for statistical mechanics. We feel that this is an exaggeration. If we had only the von Neumann theorem we could probably live with it quite well. Typically, initial conditions are not precisely measurable anyway, so that one could well associate initial states with measures $f \D \mu$ where $\int f \, \D \mu = 1$, in which case the von Neumann theorem suffices. However, the Birkhoff theorem does hold and is clearly a result that we are happier to use in justifying the statement that phase-space averages and time averages are equal.
+
+Finally, one should ask whether classical mechanical flows on constant energy surfaces are in fact ergodic. Little is known about this interesting but difficult question. However, Sinai has shown recently that a gas of hard
+spheres in a box is an ergodic system.
