@@ -1,0 +1,63 @@
+\section{Spectral Theorem}
+
+\subsection{The continuous functional calculus}
+
+In this chapter, we will discuss the spectral theorem in its many guises. This structure theorem is a concrete description of all self-adjoint operators. There are several apparently distinct formulations of the spectral theorem. In some sense they are all equivalent.
+
+The form we prefer says that every bounded self-adjoint operator is a multiplication operator. (We emphasize the word bounded since we will deal extensively with unbounded self-adjoint operators in the next chapter; there is a spectral theorem for unbounded operators which we discuss in Section VIII.3.) This means that given a bounded self-adjoint operator on a Hilbert space $\H$, we can always find a measure pu on a measure space $M$ and a unitary operator $\op U: \H \to \L{2}{M, \D \mu}$ so that
+\begin{align}
+    (\op U \op A \op U^{-1} f)(x) = F(x)f(x)
+\end{align}
+for some bounded real-valued measurable function $F$ on $M$.
+
+This is clearly a generalization of the finite-dimensional theorem, which says any self-adjoint $n \times n$ matrix can be diagonalized, or in an abstract form: Given self-adjoint operator $\op A$ on an $n$-dimensional complex space $V$,
+there is a unitary operator $\op U: V \to \C^n$ and real numbers $\lambda_1, \cdots, \lambda_n$ so that \begin{align}
+    (\op U \op A \op U^{-1} f)_i = \lambda_i f_i \quad \text{for each} \quad f = (f_1, \cdots, f_n) \in \C^n \:.
+\end{align}
+
+In practice, $M$ will be a union of copies of $\R$ and $F$ will be $x$, so the core of the proof of the theorem will be the construction of certain measures.
+This will be done in Section VII.2 by using the Riesz-Markov theorem. Our goal in this section will be to make sense out of $f(\op A)$, for $f$ a continuous function. In the next section, we will consider the measures defined by the functionals $f \mapsto [\psi, f(\op A) \psi]$ for fixed $\psi \in \H$.
+
+Given a fixed operator $\op A$, for which $f$ can define $f(\op A)$?
+First, suppose that $\op A$ is an arbitrary bounded operator. If $f(x) = \sum_{n=1}^N a_n x^n$ is a polynomial, we want $f(\op A) = \sum_{n=1}^N a_n \op A^n$. Suppose that $f(x) = \sum_{n=0}^\infty c_n x^n$ is a power series with radius of convergence $R$. If $\norm{A} \leq R$, then $\sum_{n=0}^\infty c_n \op A^n$ converges in $\mathcal{L}(\H)$ so it is natural to set $f(A) = \sum_{n=0}^\infty c_n \op A^n$. In this last case, $f$ was a function analytic in a domain including all of $\sigma(\op A)$. In general, one can make a reasonable definition for $f(\op A)$ if fis analytic in a neighborhood of $\sigma(\op A)$ (see the Notes).
+
+The functional calculus we have talked about thus far works for any operator in any Banach space. The special property of self-adjoint operators (or more generally normal operators; see Problems 3, 5) is that $\norm{P(\op A)} = \sup_{\lambda \in \sigma (\op A)} |P(\lambda|$ for any polynomial $P$, so that one can use the B.L.T. theorem to extend the functional calculus to continuous functions. Our major goal in this section is the proof of:
+
+\begin{theorem}[Continuous functional calculus]
+    Let $\op A$ be a self-adjoint operator on a Hilbert space $\H$. Then there is a \textit{unique} map $\phi: C(\sigma(\op A)) \to \mathcal{L}(\H)$ with the following properties:
+    \begin{enumerate}
+        \item $\phi$ is an algebraic $\star$-homomorphism, that is,
+        \begin{align}
+            \phi(fg) = \phi(f) \phi(g) \:, \quad \phi(\lambda f) = \lambda \phi(f) \:, \\
+            \phi(1) = \op I \:, \quad \phi(\o{f}) = \phi(f)^\star \:. 
+        \end{align}
+        \item $\phi$ is continuous, that is, $\norm{\phi(f)}_{\mathcal{L}(\H)} \leq C \norm{f}_{\infty}$.
+        \item Let $f$ be the function $f(x) = x$; then $\phi(f) = \op A$.
+        
+        Moreover, $\phi$ has the additional properties:
+
+        \item If $\op A \psi = \lambda \psi$, then $\phi(f) \psi = f(\lambda) \psi$.
+        \item $\sigma[\phi(f)] = \set{f(\lambda) | \lambda \in \sigma(\op A)}$ (spectral mapping theorem).
+        \item If $f \leq 0$, then $\phi(f) \leq 0$.
+        \item $\norm{\phi(f)} = \norm{f}_{\infty}$ (this strengthens (2)). 
+    \end{enumerate}
+\end{theorem}
+
+We Sometimes write  $\phi_A(f)$ or $f(\op A)$ for $\phi(f)$ to emphasize the dependence on $\op A$.
+
+The idea of the proof which we give below is quite simple. (1) and (3) uniquely determine $\phi(\op P)$ for any polynomial $P(x)$. By the Weierstrass theorem, the set of polynomials is dense in $C(\sigma( \op A))$ so the heart of the proof is showing that
+\begin{align}
+    \norm{P(\op A)}_{\mathcal{L}(\H)} = \norm{P(x)}_{C(\sigma(\op A)) } = \sup_{\lambda \in \sigma(\op A)} |P(\lambda)| \:.
+\end{align}
+The existence and uniqueness of $\phi$ then follow from the B.L.T. theorem.
+To prove the crucial equality, we first prove a special case of (5) (which holds for arbitrary bounded operators):
+
+\begin{lemma}
+    Let $P(x) = \sum_{n=0}^N a_n x^n$. Let $P(\op A) = \sum_{n=0}^N a_n \op A^n$. Then \begin{align}
+        \sigma(P(\op A)) = \set{P(\lambda) | \lambda \in \sigma(\op A)} \:.
+    \end{align}
+\end{lemma}
+
+\begin{proof}
+    Let $\lambda \in \sigma(\op A)$. Since $x = \lambda$ is a root of $P(x) - P(\lambda)$, we have $P(x) - P(\lambda)$, we have $P(x)- P(\lambda) = (x-\lambda) Q(x)$, so $P(\op A) - P(\lambda) = (\op A - \lambda) Q(\op A)$.
+\end{proof}

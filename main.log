@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.5.24)  12 JUL 2021 23:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.5.24)  13 JUL 2021 15:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1155,12 +1155,7 @@ LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/n' will be
  [2]
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 72.
-
-Overfull \hbox (16.19585pt too wide) detected at line 81
-[]
- []
-
-[3]
+ [3]
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
 (Font)              scaled to size 7.6pt on input line 120.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
@@ -1204,23 +1199,29 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 9.37807pt on input line 351.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 351.
-) [13 </home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/Figures//spectrumTalpha.png (PNG copy)>] (/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.aux)
+) (/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/Chapters/spectral-theorem.tex
+LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/b/sc' will be
+(Font)              scaled to size 10.0pt on input line 3.
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/LibertinusSans-TLF/b/sc/10'.
+(microtype)             Ignoring protrusion settings for this character.
+ [13 </home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/Figures//spectrumTalpha.png (PNG copy)>] [14]) [15] (/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 22399 strings out of 478994
- 402080 string characters out of 5864751
+ 22435 strings out of 478994
+ 402748 string characters out of 5864751
  1032014 words of memory out of 5000000
- 39289 multiletter control sequences out of 15000+600000
- 563105 words of font info for 183 fonts, out of 8000000 for 9000
+ 39300 multiletter control sequences out of 15000+600000
+ 567587 words of font info for 186 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 111i,23n,116p,10659b,696s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_mfadfl.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_tll2u3.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_nufysp.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_sfissr.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_75t36g.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_cb34qf.enc}</usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusMono-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Italic.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.pdf (13 pages, 640817 bytes).
+ 111i,23n,116p,10659b,811s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_cb34qf.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_mfadfl.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_tll2u3.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_nufysp.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_sfissr.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_75t36g.enc}</usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusMono-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Italic.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on /home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.pdf (15 pages, 652521 bytes).
 PDF statistics:
- 295 PDF objects out of 1000 (max. 8388607)
- 258 compressed objects within 3 object streams
- 122 named destinations out of 1000 (max. 500000)
- 26142 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 331 PDF objects out of 1000 (max. 8388607)
+ 292 compressed objects within 3 object streams
+ 141 named destinations out of 1000 (max. 500000)
+ 26670 words of extra memory for PDF output out of 29859 (max. 10000000)
 

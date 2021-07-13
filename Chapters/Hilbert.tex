@@ -14,7 +14,7 @@ Obviously, $\op T_{t+s} = \op T_t \op T_s$. In classical mechanics, the observab
 \begin{align}
     \lim_{T \rightarrow \infty} \frac{1}{T} \int_0^T f(\op T_t x) \, \D t \:.
 \end{align}
-We would like to show that the limit exists, at least for continuous functions. Typically $\Gamma$ is a metric space, so \enquote{continuous} has a meaning. Not only would we like the limit to exist, but it should be independent of the initial point $x$ or at least only dependent on a few \enquote*{macroscopic} observables we can associate with an equilibrium state. For systems which are time-translation independent, the energy is a conserved quantity, so the average-energy is the initial energy—thus we cannot hope for measurements to be independent of the initial energy. Therefore, for each energy $E$ we look at the constant energy surface, $\Omega_E$, in phase space, and for each  $w \in \Omega_E$ and each continuous function $f$ on $\Omega_E$ we hope that
+We would like to show that the limit exists, at least for continuous functions. Typically $\Gamma$ is a metric space, so \enquote{continuous} has a meaning. Not only would we like the limit to exist, but it should be independent of the initial point $x$ or at least only dependent on a few \enquote{macroscopic} observables we can associate with an equilibrium state. For systems which are time-translation independent, the energy is a conserved quantity, so the average-energy is the initial energy—thus we cannot hope for measurements to be independent of the initial energy. Therefore, for each energy $E$ we look at the constant energy surface, $\Omega_E$, in phase space, and for each  $w \in \Omega_E$ and each continuous function $f$ on $\Omega_E$ we hope that
 \begin{align}
     \lim_{T \rightarrow \infty} \frac{1}{T} \int_0^T f(\op T_t w) \, \D t
 \end{align}
@@ -24,7 +24,7 @@ exists and is a number, $\mu(f)$, independent of $w$. The map $f \mapsto \mu(f)$
     \item $\mu$ is linear.
     \item $\mu(f) \geq 0$ if $f \geq 0$.
 \end{enumerate}
-We will eventually see (Section I[V.4) that such a $\mu$ is always associated with a measure $\hat{mu}$ on $\Omega_E$ with $\hat{\mu}(\Omega_E) = 1$, so that
+We will eventually see (Section I[V.4) that such a $\mu$ is always associated with a measure $\hat{\mu}$ on $\Omega_E$ with $\hat{\mu}(\Omega_E) = 1$, so that
 \begin{align}
     \mu(f) = \int_{\Omega_E} f(w) \, \D \hat{\mu}(w) \:.
 \end{align}
@@ -39,7 +39,7 @@ exists for each fixed $w$ and is independent of $w \in \Omega_E$, then there is 
     \lim_{T \rightarrow \infty} \frac{1}{T} \int_0^T f(\op T_t w) \, \D t = \int_{\Omega_E} f(w) \, \D \mu(w) \:.
 \end{align}
 The measure $\mu$ has a very important property. Let $s$ be fixed and suppose $\chi_F$ is the characteristic function of a measurable set $F \subset \Omega_E$. The \begin{align}
-    \frac{1}{T} \int_0^T \chi_{\op T_s^{-1} F} (\op T_t w) \, \D t = \frac{1}{T} \int_0^T \xi_F (\op T_s \op T_t w) \, \D t
+    \frac{1}{T} \int_0^T \chi_{\op T_s^{-1} F} (\op T_t w) \, \D t = \frac{1}{T} \int_0^T \chi_F (\op T_s \op T_t w) \, \D t
 \end{align}
 so if the $\lim_{T \rightarrow \infty}$ exists, then $\mu(\op T_s^{-1}F) = \mu(F)$, that is, the measure is \textbf{invariant}. We also say that $\op T$ is \textbf{measure preserving}. Classical mechanical systems come equipped with a natural invariant measure: if $\Gamma = \R^{6N}$ ($N$ is the number of particles), the measure $\D^{3N} q \D^{3N} p$ is known to be invariant under the Hamiltonian flow (Liouville’s theorem). This measure has a restriction to $\Omega_E$ given formally by
 \begin{align}
@@ -74,10 +74,10 @@ Therefore, if $f \in \L{2}{\Omega_E, \D \mu_E}$, we define a map $f \overset{\op
 \end{lemma}
 \begin{proof}
     \begin{align}
-        (\op U_t f, \op U_t g) =
+        (\op U_t f, \op U_t g) =&
          \int_{\Omega_E} \overline{f(\op T_t w)} g(\op T_t w) \, \D \mu_E (w) =
-         \int_{\Omega_E} \overline{f(y} g(y) \, \D \mu_E (\op T_t^{-1} y) =
-         \int_{\Omega_E} \overline{f(y} g(y) \, \D \mu_E (y) = (f,g) \:,
+         \int_{\Omega_E} \overline{f(y)} g(y) \, \D \mu_E (\op T_t^{-1} y) = \\ =&
+         \int_{\Omega_E} \overline{f(y)} g(y) \, \D \mu_E (y) = (f,g) \:, \nonumber
     \end{align}
     where we have used the invariance of the measure $\mu_E$. Since $\op U_t \op U_{-t} = \op U_0 = \op I$, $\op U$ is invertible and thus unitary.
 \end{proof}
@@ -101,7 +101,7 @@ Let $\op U$ be a unitary operator on a Hilbert space $\H$. Let $\op P$ be the or
 We first prove an elementary technical lemma:
 \begin{lemma}
     \begin{enumerate}
-        \item If \,$\op U$ is unitary, $\op U f = f$ if and only if $\op U^\star f = f$.
+        \item If \,$\op U$ is unitary, $\op U f = f$ if and only if \,$\op U^\star f = f$.
         \item For any operator on a Hilbert space $\H$, $(\Ran \op A)^\bot = \Ker \op A^\star$.
     \end{enumerate}
 \end{lemma}
