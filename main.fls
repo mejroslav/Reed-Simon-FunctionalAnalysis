@@ -1519,9 +1519,13 @@ INPUT /usr/share/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusSans-Bold
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSans-Bold-tlf-sc-t1--base.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusSans-Bold-tlf-t1.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSans-Bold-tlf-t1--base.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-BoldItalic-tlf-t1.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusSerif-BoldItalic-tlf-t1.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-BoldItalic-tlf-t1--base.tfm
 INPUT /home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.aux
 INPUT /home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.out
 INPUT /home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.out
+INPUT /usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_opzo24.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_cb34qf.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_mfadfl.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_tll2u3.enc
@@ -1533,6 +1537,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusMono-R
 INPUT /usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Bold.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Bold.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-BoldItalic.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Italic.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Regular.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
