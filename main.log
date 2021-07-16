@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.5.24)  17 JUL 2021 00:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.5.24)  17 JUL 2021 00:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1118,11 +1118,16 @@ LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/n' will be
 (Font)              scaled to size 14.4pt on input line 70.
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/sc' will be
 (Font)              scaled to size 14.4pt on input line 70.
+
+Overfull \hbox (70.44858pt too wide) in paragraph at lines 70--70
+ [][] 
+ []
+
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 95.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 95.
- (/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/Chapters/Hilbert.tex
+(/home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/Chapters/Hilbert.tex
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/LibertinusSans-TLF/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1215,13 +1220,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  22487 strings out of 478994
  403368 string characters out of 5864751
- 1032014 words of memory out of 5000000
+ 1032090 words of memory out of 5000000
  39308 multiletter control sequences out of 15000+600000
  572946 words of font info for 188 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  111i,23n,116p,10659b,811s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_opzo24.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_cb34qf.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_mfadfl.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_tll2u3.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_nufysp.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_sfissr.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_75t36g.enc}</usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusMono-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-BoldItalic.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Italic.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.pdf (19 pages, 736945 bytes).
+Output written on /home/mir/Disk/Projects/LaTeX/Reed-Simon-FunctionalAnalysis/main.pdf (19 pages, 738272 bytes).
 PDF statistics:
  404 PDF objects out of 1000 (max. 8388607)
  359 compressed objects within 4 object streams
