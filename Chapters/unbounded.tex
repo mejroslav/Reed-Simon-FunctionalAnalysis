@@ -21,7 +21,7 @@ The \textbf{graph} of the linear transformation $\op T$ is the set of pairs
 The graph of $\op T$, denoted by $\Gamma(\op T)$, is thus a subset of $\H \times \H$ which is a Hilbert space with inner product \begin{align}
     \left([\phi_1, \psi_1], [\phi_2, \psi_2] \right) = (\phi_1, \phi_2) + (\psi_1, \psi_2) \:.
 \end{align}
-$\op T$ is called a closed operator if $\Gamma(\op T)$ is a closed subset of $\H \times \H$.
+$\op T$ is called a \textbf{closed} operator if $\Gamma(\op T)$ is a closed subset of $\H \times \H$.
 \end{definition}
 
 \begin{definition}
@@ -131,9 +131,17 @@ To prove (2), observe that $\Gamma(\op T)$ is a linear subset of $\H \times \H$ 
 \begin{align}
     \o{\Gamma(\op T)} = \left[ \Gamma(\op T)^\bot \right]^\bot = \left[ \op V^2 \Gamma(\op T)^\bot \right]^\bot = \left[ \op V(\op V \Gamma(\op T))^\bot \right]^\bot \:.
 \end{align}
-Thus, by the proof of (1), if $\op T^\star$ is densely defined, $\Gamma(\op T)$ is the graph of $\op T^{\star \star}$.
+By the proof of (1), $\op V [\Gamma (\op T)]^\bot = \Gamma (\op T^\star)$, and if $\op T^\star$ is densely defined, then 
+\begin{align}
+    \o{\Gamma(\op T)} = \left[ \op V(\op V \Gamma(\op T))^\bot \right]^\bot = \left[ \op V(\Gamma(\op T^\star))\right]^\bot = \Gamma(\op T^{\star \star}) \:, 
+\end{align}
+so $\Gamma(\o{\op T})$ is the graph of $\op T^{\star \star}$.
 
-Conversely, suppose that $D(\op T^\star)$ is not dense and that $ \psi \in D(\op T^\star)^\star$. A simple computation shows that $[\psi,0] \in [\Gamma(\op T^\star)]^\bot$ so $\op V\left[\op T(\op T^\star)\right]^\bot$ is not the graph of a (single-valued) operator. Since $\o{\Gamma(\op T)} = \op V\left[\op T(\op T^\star)\right]^\bot$, we see that $\op T$ is not closable.
+Conversely, suppose that $D(\op T^\star)$ is not dense. A simple computation shows that for every $ \psi \in D(\op T^\star)^\bot$ and $\phi \in D(\op T^\star)$
+\begin{align}
+    \left( [\psi, 0], [\phi, \op T^\star \phi ] \right) = (\psi, \phi) + (0, \op T^\star \phi) = 0 \:,
+\end{align}
+so $[\psi,0] \in [\Gamma(\op T^\star)]^\bot$. Therefore $\op V\left[\Gamma(\op T^\star)\right]^\bot$ is not the graph of a (single-valued) operator. Since $\o{\Gamma(\op T)} = \op V\left[\Gamma(\op T^\star)\right]^\bot$, we see that $\op T$ is not closable.
 
 To prove (3), notice that if $\op T$ is closable,
 \begin{align}
@@ -181,7 +189,7 @@ Both $D(\op T_1)$ and $D(\op T_2)$ are dense in $\L{2}{[0,1]}$ and both of the o
 
 The proof that $\op T_1$ and $\op T_2$ are closed is left as an exercise (Problem 3). To see that the spectrum of $\op T_1$ is the whole plane we observe that
 \begin{align}
-    (\lambda \op I - \op T_1) e^{-\i \lambda x} = 0 \quad \text{ and} e^{-\i \lambda x} \in D(\op T_1)
+    (\lambda \op I - \op T_1) e^{-\i \lambda x} = 0 \quad \text{ and } \quad  e^{-\i \lambda x} \in D(\op T_1)
 \end{align}
 for all $\lambda \in \C$. As for the $\op T_2$, the operator \begin{align}
     (\op S_\lambda g)(x) = \i \int_0^x e^{-\i \lambda(x-s)} g(s) \, \D s
@@ -205,7 +213,7 @@ so $\op S_\lambda$ is bounded. By the remark immediately after the definition of
 the basic criterion for self-adjointness}
 
 \begin{definition}
-A densely defined operator $\op T$ on a Hilbert space is called \textbf{symmetric} (or \textbf{Hermitian}) if $\op T \subset \op T^\star$, that is, if $D(\op T) < D(\op T^\star)$ and $\op T \phi = \op T^\star \phi$ for all $\phi \in D(\op T)$. Equivalently, $\op T$ is symmetric if and only if
+A densely defined operator $\op T$ on a Hilbert space is called \textbf{symmetric} (or \textbf{Hermitian}) if $\op T \subset \op T^\star$, that is, if $D(\op T) \subset D(\op T^\star)$ and $\op T \phi = \op T^\star \phi$ for all $\phi \in D(\op T)$. Equivalently, $\op T$ is symmetric if and only if
 \begin{align}
     (\op T \phi, \psi) = (\phi, \op T \psi) \quad \text{for all } \phi, \psi \in D (\op T) \:.
 \end{align}
@@ -218,14 +226,14 @@ A densely defined operator $\op T$ on a Hilbert space is called \textbf{symmetri
 
 A symmetric operator is always closable, since $D(\op T^\star) \supset D(\op T)$ is dense in $\H$. If $\op T$ is symmetric, $\op T^\star$ is a closed extension of $\op T$, so the smallest closed extension $T^{\star \star}$ of $\op T$ must be contained in $\op T^\star$. Thus for symmetric operators, we have
 \begin{align}
-    \op T \subset \op T^{\star \star} \subset \op T^\star \:.
+    \op T \subset \op {\o T} = \op T^{\star \star}  \subset \op T^\star \:.
 \end{align}
 For closed symmetric operators, \begin{align}
-    \op T = \op T^{\star\star} \subset \op T^\star \:.
+    \op T = \op {\o T} = \op T^{\star \star} \subset \op T^\star \:.
 \end{align}
 And, for self-adjoint operators,
 \begin{align}
-    \op T= \op T^{\star \star} = \op T^{\star } \:. 
+    \op T= \op {\o T} = \op T^{\star \star}  = \op T^{\star } \:. 
 \end{align}
 
 From this one can easily see that a closed symmetric operator $\op T$ is self-adjoint if and only if $\op T^\star$ is symmetric.
