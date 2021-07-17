@@ -1,4 +1,7 @@
-\section{Domains, graphs, adjoints and spectrum}
+\setcounter{section}{9}
+\section{Unbounded Operators}
+
+\subsection{Domains, Graphs, Adjoints and Spectrum}
 
 It is a fact of life that many of the most important operators which occur in mathematical physics are not bounded. In this chapter we will introduce some of the basic definitions and theorems necessary for dealing with unbounded operators on Hilbert spaces. The Hellinger-Toeplitz theorem (see Section III.5) says that an everywhere-defined operator $\op A$ which satisfies $(\op A \phi, \psi) = (\phi, \op A \psi) $ is necessarily a bounded operator suggesting that a general unbounded operator $\op T$ will only be defined on a dense linear subset of the Hilbert space.
 Thus an \textbf{operator} on a Hilbert space $\H$ is a linear map from its domain, a linear subspace of $\H$, into $\H$. Unless we specify otherwise, we will always suppose that the domain is dense. This subspace, which we denote by $D( \op T)$, is called the \textbf{domain} of the operator $\op T$. So, to identify an unbounded operator on a Hilbert space one must first give the domain on which it acts and then specify how it acts on that subspace.
@@ -209,7 +212,7 @@ so $\op S_\lambda$ is bounded. By the remark immediately after the definition of
 
 \end{example}
 
-\section{Symmetric and self-adjoint operators:
+\subsection{Symmetric and self-adjoint operators:
 the basic criterion for self-adjointness}
 
 \begin{definition}
@@ -245,13 +248,15 @@ A symmetric operator $\op T$ is called \textbf{essentially self-adjoint} if its 
 
 If $\op T$ is essentially self-adjoint, then it has one and only one self-adjoint extension, for suppose that $\op S$ is a self-adjoint extension of $\op T$. Then, $\op S$ is closed and thereby, since $\op S \supset \op T$, $\op S \supset \op T^{\star \star}$. Thus, $\op S = \op S^\star \subset (\op T^{\star \star})^\star = \op T^{\star \star}$, and so
 $\op S = \op T^{\star \star}$. The converse is also true; namely, if $\op T$ has one and only one self-adjoint extension, then $\op T$ is essentially self-adjoint (see Section X.1). Since
-$\op T^{\star} = \o{\op T}^{\star} = \op T^{\star \star \star}$, $\op T$ is essentially self-adjoint if and only if
+$\op T^{\star} = (\op{\o T} )^{\star} = \op T^{\star \star \star}$, $\op T$ is essentially self-adjoint if and only if
 \begin{align}
-    \op T \subset \op T^{\star \star} = \op T^{\star} \:.
+    \op T \subset  \o { \op T} = \op T^{\star \star} = \op T^{\star} \:.
 \end{align}
 
-The importance of essential self-adjointness is that one is often given a nonclosed symmetric operator $\op T$. If $\op T$ can be shown to be essentially self-adjoint, then there is uniquely associated to $\op T$ a self-adjoint operator $\op T = \op T^{\star \star}$.
-Another way of saying this is that if $\op A$ is a self-adjoint operator, then to specify $\op A$ uniquely one need not give the exact domain of $\op A$ (which is often difficult), but just some core for $\op A$. Now, suppose that $\op T$ is a self-adjoint operator and that there is a $\phi \in D(\op T^{\star}) = D(\op T) $ so that $\op T^{\star} \phi = \i \phi$. Then $\op T \phi = \i \phi$ and
+The importance of essential self-adjointness is that one is often given a nonclosed symmetric operator $\op T$. If $\op T$ can be shown to be essentially self-adjoint, then there is uniquely associated to $\op T$ a self-adjoint operator $\o{\op T} = \op T^{\star \star}$.
+Another way of saying this is that if $\op A$ is a self-adjoint operator, then to specify $\op A$ uniquely one need not give the exact domain of $\op A$ (which is often difficult), but just some core for $\op A$.
+
+Now, suppose that $\op T$ is a self-adjoint operator and that there is a $\phi \in D(\op T^{\star}) = D(\op T) $ so that $\op T^{\star} \phi = \i \phi$. Then $\op T \phi = \i \phi$ and
 \begin{align}
     - \i (\phi, \phi) =(\i \phi, \phi) = (\op T \phi, \phi) = (\phi, \op T^\star \phi ) = (\phi, \op T \phi) = \i (\phi, \phi) \:,
 \end{align}
@@ -272,10 +277,14 @@ The converse statement, that if $\op T$ is a closed symmetric operator and $\op 
 \begin{proof}
 We have just seen that (1) implies (2). Suppose that (2) holds; we will
 prove (3). Since $\op T^\star \phi = -\i \phi$ has no solutions, $\Ran (\op T- \i) $ must be dense.
-Otherwise, if $\psi \in \Ran ( \op T- \i )^\bot$, we would have $((\op T-\i) \phi, \psi) =0$ for all $\phi \in D(\op T)$, so $\psi \in D(\op T^\star)$ and $(\op T - \i)^\star \psi = (\op T^\star + \i) \psi = 0$ which is impossible since $\op T^\star = - \i \psi $ has no solutions.
+Otherwise, if $\psi \in \Ran ( \op T- \i )^\bot$, we would have 
+\newline
+$\left((\op T-\i) \phi, \psi \right) =0$ for all $\phi \in D(\op T)$, so $\psi \in D(\op T^\star)$ and $(\op T - \i)^\star \psi = (\op T^\star + \i) \psi = 0$ which is impossible since $\op T^\star \psi = - \i \psi $ has no solutions.
 (Reversing this last argument we can show that if $\Ran ( \op T - \i)$ is dense, the kernel of $\op T^\star + \i $ is $\set{0}$.) Since $\Ran ( \op T - \i)$  is dense, we need only prove it is closed to conclude that $\Ran ( \op T - \i) = \H$ . But for all $\phi \in D(\op T)$
 \begin{align}
-    \norm{(\op T - \i) \phi}^2 = \norm{\op T \phi}^2 + \norm{\phi}^2 \:.
+    \norm{(\op T - \i) \phi}^2 = |\left((\op T - i) \phi, (\op T - i) \phi  \right)|
+    = |(\op T \phi, \op T \phi) + ( i \phi, \op T \phi) - (\op T \phi, i \phi) + (\phi, \phi)|
+    = \norm{\op T \phi}^2 + \norm{\phi}^2 \:.
 \end{align}
 
 Thus if $\phi_n \in D(\op T)$ and $(\op T - \i) \phi_n \rightarrow \psi_0$, we conclude that $\phi_n$ converges to some vector $\phi_0$ and $\op T \phi_n$ converges too. Since $\op T$ is closed, $\phi_0 \in D(\op T)$ and $(\op T - \i) \phi_0 = \psi_0$. Thus, $\Ran(\op T - \i)$ is closed, so $\Ran (\op T - \i) = \H$. Similarly, $\Ran(T+\i) = \H$.
@@ -283,7 +292,7 @@ Thus if $\phi_n \in D(\op T)$ and $(\op T - \i) \phi_n \rightarrow \psi_0$, we c
 Finally, we will show that (3) implies (1). Let $\phi \in D(\op T^\star)$. Since $\Ran (\op T -\i) = \H$, there is an $\eta \in D(\op T)$ so that $(\op T - \i) \eta = (\op T^\star - \i) \phi$. $D(\op T) \subset D(\op T^\star)$, so $\phi - \eta \in D(\op T^\star)$ and \begin{align}
     (\op T^\star - \i)(\phi - \eta) = 0 \:.
 \end{align}
-Since $\Ran(\op T +\i) )=\H$, $\Ker (\op T^\star - \i) = \set{0}$, so $\phi = \eta \in D(\op T)$. This proves that $D(\op T^\star) = D(\op T)$, so $\op T$ is self-adjoint.
+Since $\Ran(\op T +\i) )=\H$, $\Ker (\op T^\star - \i) = \set{0}$, so $\phi - \eta \in D(\op T)$. This proves that $D(\op T^\star) = D(\op T)$, so $\op T$ is self-adjoint.
 
 \end{proof}
 
@@ -305,8 +314,8 @@ We conclude with an example which shows that a symmetric operator may have many 
 
 A simple integration by parts shows that as an operator on $\L{2}{[0,1]}$, $\op T$ is
 symmetric. We begin by determining $\op T^\star$. Let $j_\varepsilon$ be the function defined in Example 3 of Section VIII.1. Fix $0 <\alpha < \beta <1 $ and define  \begin{align}
-    f_\varepsilon^{\alpha, \beta} (x) = j_\varepsilon(x-\beta) - j_\varepsilon(x - \alpha) \:, \\
-    g_\varepsilon^{\alpha, \beta} (x) = \int_0^x f_\varepsilon^{\alpha, \beta} (t) \, \D t \:.
+    f_\varepsilon^{\alpha, \beta} (x) =& j_\varepsilon(x-\beta) - j_\varepsilon(x - \alpha) \:, \\
+    g_\varepsilon^{\alpha, \beta} (x) =& \int_0^x f_\varepsilon^{\alpha, \beta} (t) \, \D t \:.
 \end{align}
 Let $\psi \in D(\op T^\star)$. For $\varepsilon$ small enough, $g_\varepsilon^{\alpha, \beta} \in D(\op T)$ so \begin{align}
     (\op T g_\varepsilon^{\alpha, \beta} , \psi) =(g_\varepsilon^{\alpha, \beta}, \op T^\star \psi) \:.
@@ -328,12 +337,12 @@ converges in $\L{2}{\R}$ to $\phi$ if $\phi$ is continous. Moreover, each $\op J
      \leq&
       \norm{\phi} \norm{\psi} \int_{[0,1]} j_\varepsilon(y) \, \D y 
      =
-      \norm{\phi} \norm{\psi} \:.
+      \norm{\phi} \norm{\psi} \:. \nonumber
 \end{align}
 By an $\varepsilon/3$ argument, $\op J_\varepsilon \phi \overset{L^2}\rightarrow \phi$ for all $\phi \in \L{2}{[0,1]}$.
 Thus, the left side of (VIII.3)
 converges to $-[\psi(\beta) - \psi(\alpha)]$ in mean square as $\varepsilon \rightarrow 0$. So, for almost all $\alpha, \beta$ \begin{align}
-    -\i[\psi(\beta) - \psi(\alpha)] = \int_\alpha^\beta (\op T^\star \psi)(x) \, \D x \:.
+    \i[\psi(\beta) - \psi(\alpha)] = \int_\alpha^\beta (\op T^\star \psi)(x) \, \D x \:.
 \end{align}
 This mean that $\psi$ is absolutely continous (see the Notes for Section VIII.1) and \begin{align}
     \i \der{\psi}{x} = (\op T^\star \psi)(x) \:.
@@ -343,8 +352,9 @@ shows that any $\psi \in AC[0,1]$ is in the domain of $\op T^\star$ and $\op T^\
 It is easy to see that $\op T$ is not essentially self-adjoint since \begin{align}
     e^{\pm x} \in D(\op T^\star) \quad \text{and } \quad \i \der{}{x} e^{\pm x} = \pm \i e^{\pm x} \:.
 \end{align}
+In fact, $\op T$ is closed (Problem 6).
 
-In fact, $\op T$ is closed (Problem 6) so $\op T$ is a closed, symmetric but not self-adjoint operator.
+So $\op T$ is a closed, symmetric but not self-adjoint operator.
 Does $\op T$ have any self-adjoint extensions? Yes, uncountably many different ones! Let $\alpha \in \C$, $|\alpha| = 1$, and define
 \begin{align}
     \op T_\alpha = \i \der{}{x} \quad \text{on} \quad D(\op T_\alpha) = \set{\phi | \phi \in AC[0,1] , \: \phi(0) = \alpha \phi(1)} \:.

@@ -1,10 +1,12 @@
+\setcounter{section}{6}
+
 \section{Spectral Theorem}
 
 \subsection{The continuous functional calculus}
 
 In this chapter, we will discuss the spectral theorem in its many guises. This structure theorem is a concrete description of all self-adjoint operators. There are several apparently distinct formulations of the spectral theorem. In some sense they are all equivalent.
 
-The form we prefer says that every bounded self-adjoint operator is a multiplication operator. (We emphasize the word bounded since we will deal extensively with unbounded self-adjoint operators in the next chapter; there is a spectral theorem for unbounded operators which we discuss in Section VIII.3.) This means that given a bounded self-adjoint operator on a Hilbert space $\H$, we can always find a measure pu on a measure space $M$ and a unitary operator $\op U: \H \to \L{2}{M, \D \mu}$ so that
+The form we prefer says that every bounded self-adjoint operator is a multiplication operator. (We emphasize the word bounded since we will deal extensively with unbounded self-adjoint operators in the next chapter; there is a spectral theorem for unbounded operators which we discuss in Section VIII.3.) This means that given a bounded self-adjoint operator on a Hilbert space $\H$, we can always find a measure $\mu$ on a measure space $M$ and a unitary operator $\op U: \H \to \L{2}{M, \D \mu}$ so that
 \begin{align}
     (\op U \op A \op U^{-1} f)(x) = F(x)f(x)
 \end{align}
@@ -16,57 +18,57 @@ there is a unitary operator $\op U: V \to \C^n$ and real numbers $\lambda_1, \cd
 \end{align}
 
 In practice, $M$ will be a union of copies of $\R$ and $F$ will be $x$, so the core of the proof of the theorem will be the construction of certain measures.
-This will be done in Section VII.2 by using the Riesz-Markov theorem
+This will be done in Section VII.2 by using the Riesz-Markov theorem.
 \footnote{
-    The theorem reads as follows: Let $X$ be a compact Hausdorff space. For any positive linear functional $\ell$ on $C(X)$ there is a unique Baire measure $\mu$ on $X$ with 
+    The Riesz-Markov theorem reads as follows: Let $X$ be a compact Hausdorff space. For any positive linear functional $\ell$ on $C(X)$ there is a unique Baire measure $\mu$ on $X$ with 
 \begin{align*} 
-    \ell(f) = \int f \, \D \mu \:.
+    \ell(f) = \int_X f \, \D \mu \quad \text{for every} \quad f \in C(X) \:.
 \end{align*}
 }
-. Our goal in this section will be to make sense out of $f(\op A)$, for $f$ a continuous function. In the next section, we will consider the measures defined by the functionals $f \mapsto [\psi, f(\op A) \psi]$ for fixed $\psi \in \H$.
+ Our goal in this section will be to make sense out of $f(\op A)$, for $f$ a continuous function. In the next section, we will consider the measures defined by the functionals $f \mapsto [\psi, f(\op A) \psi]$ for fixed $\psi \in \H$.
 
 Given a fixed operator $\op A$, for which $f$ can define $f(\op A)$?
-First, suppose that $\op A$ is an arbitrary bounded operator. If $f(x) = \sum_{n=1}^N a_n x^n$ is a polynomial, we want $f(\op A) = \sum_{n=1}^N a_n \op A^n$. Suppose that $f(x) = \sum_{n=0}^\infty c_n x^n$ is a power series with radius of convergence $R$. If $\norm{A} \leq R$, then $\sum_{n=0}^\infty c_n \op A^n$ converges in $\mathcal{L}(\H)$ so it is natural to set $f(A) = \sum_{n=0}^\infty c_n \op A^n$. In this last case, $f$ was a function analytic in a domain including all of $\sigma(\op A)$. In general, one can make a reasonable definition for $f(\op A)$ if fis analytic in a neighborhood of $\sigma(\op A)$ (see the Notes).
+First, suppose that $\op A$ is an arbitrary bounded operator. If $f(x) = \sum_{n=1}^N a_n x^n$ is a polynomial, we want $f(\op A) = \sum_{n=1}^N a_n \op A^n$. Suppose that $f(x) = \sum_{n=0}^\infty c_n x^n$ is a power series with radius of convergence $R$. If $\norm{A} \leq R$, then $\sum_{n=0}^\infty c_n \op A^n$ converges in $\mathcal{L}(\H)$ so it is natural to set $f(A) = \sum_{n=0}^\infty c_n \op A^n$. In this last case, $f$ was a function analytic in a domain including all of $\sigma(\op A)$. In general, one can make a reasonable definition for $f(\op A)$ if $f$ is analytic in a neighborhood of $\sigma(\op A)$ (see the Notes).
 
-The functional calculus we have talked about thus far works for any operator in any Banach space. The special property of self-adjoint operators (or more generally normal operators; see Problems 3, 5) is that $\norm{P(\op A)} = \sup_{\lambda \in \sigma (\op A)} |P(\lambda|$ for any polynomial $P$, so that one can use the B.L.T. theorem to extend the functional calculus to continuous functions. Our major goal in this section is the proof of:
+The functional calculus we have talked about thus far works for any operator in any Banach space. The special property of self-adjoint operators (or more generally normal operators; see Problems 3, 5) is that $\norm{P(\op A)} = \sup_{\lambda \in \sigma (\op A)} |P(\lambda)|$ for any polynomial $P$, so that one can use the B.L.T. theorem to extend the functional calculus to continuous functions. Our major goal in this section is the proof of:
 
-\begin{theorem}[Continuous functional calculus]
-    Let $\op A$ be a self-adjoint operator on a Hilbert space $\H$. Then there is a \textit{unique} map $\phi: C(\sigma(\op A)) \to \mathcal{L}(\H)$ with the following properties:
+\begin{theorem}[Continuous functional calculus] \label{Theorem VII.1}
+    Let $\op A$ be a self-adjoint operator on a Hilbert space $\H$. Then there is a \textit{unique} map $\phimap: C(\sigma(\op A)) \to \mathcal{L}(\H)$ with the following properties:
     \begin{enumerate}
-        \item $\phi$ is an algebraic $\star$-homomorphism, that is,
+        \item $\phimap$ is an algebraic $\star$-homomorphism, that is,
         \begin{align}
-            \phi(fg) = \phi(f) \phi(g) \:, \quad \phi(\lambda f) = \lambda \phi(f) \:, \\
-            \phi(1) = \op I \:, \quad \phi(\o{f}) = \phi(f)^\star \:. 
+            \phimap(fg) = \phimap(f) \phimap(g) \:, \quad \phimap(\lambda f) = \lambda \phimap(f) \:, \\
+            \phimap(1) = \op I \:, \quad \phimap(\o{f}) = \phimap(f)^\star \:. 
         \end{align}
         \item $\phi$ is continuous, that is, $\norm{\phi(f)}_{\mathcal{L}(\H)} \leq C \norm{f}_{\infty}$.
-        \item Let $f$ be the function $f(x) = x$; then $\phi(f) = \op A$.
+        \item Let $f$ be the function $f(x) = x$; then $\phimap(f) = \op A$.
         
-        Moreover, $\phi$ has the additional properties:
+        Moreover, $\phimap$ has the additional properties:
 
-        \item If $\op A \psi = \lambda \psi$, then $\phi(f) \psi = f(\lambda) \psi$.
-        \item $\sigma[\phi(f)] = \set{f(\lambda) | \lambda \in \sigma(\op A)}$ (spectral mapping theorem).
-        \item If $f \leq 0$, then $\phi(f) \leq 0$.
-        \item $\norm{\phi(f)} = \norm{f}_{\infty}$ (this strengthens (2)). 
+        \item If $\op A \psi = \lambda \psi$, then $\phimap(f) \psi = f(\lambda) \psi$.
+        \item $\sigma[\phimap(f)] = \set{f(\lambda) | \lambda \in \sigma(\op A)}$ (spectral mapping theorem).
+        \item If $f \geq 0$, then $\phimap(f) \geq 0$.
+        \item $\norm{\phimap(f)} = \norm{f}_{\infty}$ (this strengthens (2)). 
     \end{enumerate}
 \end{theorem}
 
-We Sometimes write  $\phi_A(f)$ or $f(\op A)$ for $\phi(f)$ to emphasize the dependence on $\op A$.
+We sometimes write $\phimap_A(f)$ or $f(\op A)$ for $\phimap(f)$ to emphasize the dependence on $\op A$.
 
-The idea of the proof which we give below is quite simple. (1) and (3) uniquely determine $\phi(\op P)$ for any polynomial $P(x)$. By the Weierstrass theorem, the set of polynomials is dense in $C(\sigma( \op A))$ so the heart of the proof is showing that
+The idea of the proof which we give below is quite simple. (1) and (3) uniquely determine $\phimap(\op P)$ for any polynomial $P(x)$. By the Weierstrass theorem, the set of polynomials is dense in $C(\sigma( \op A))$ so the heart of the proof is showing that
 \begin{align}
     \norm{P(\op A)}_{\mathcal{L}(\H)} = \norm{P(x)}_{C(\sigma(\op A)) } = \sup_{\lambda \in \sigma(\op A)} |P(\lambda)| \:.
 \end{align}
-The existence and uniqueness of $\phi$ then follow from the B.L.T. theorem.
+The existence and uniqueness of $\phimap$ then follow from the B.L.T. theorem.
 To prove the crucial equality, we first prove a special case of (5) (which holds for arbitrary bounded operators):
 
-\begin{lemma}
+\begin{lemma} \label{Lemma VII.1}
     Let $P(x) = \sum_{n=0}^N a_n x^n$. Let $P(\op A) = \sum_{n=0}^N a_n \op A^n$. Then \begin{align}
         \sigma(P(\op A)) = \set{P(\lambda) | \lambda \in \sigma(\op A)} \:.
     \end{align}
 \end{lemma}
 
 \begin{proof}
-    Let $\lambda \in \sigma(\op A)$. Since $x = \lambda$ is a root of $P(x) - P(\lambda)$, we have $P(x) - P(\lambda)$, we have $P(x)- P(\lambda) = (x-\lambda) Q(x)$, so $P(\op A) - P(\lambda) = (\op A - \lambda) Q(\op A)$.
+    Let $\lambda \in \sigma(\op A)$. Since $x = \lambda$ is a root of $P(x) - P(\lambda)$, we have $P(x)- P(\lambda) = (x-\lambda) Q(x)$, so $P(\op A) - P(\lambda) = (\op A - \lambda) Q(\op A)$.
     Since $(\op A - \lambda)$ has no inverse neither does $P(\op A) - P(\lambda)$, that is, $P(\lambda) \in \sigma(P(\op A))$.
 
     Conversely, let $\mu \in \sigma(P(\op A))$ and let $\lambda_1, \cdots, \lambda_n$ be the roots of $P(x)- \mu$, that is, $P(x) - \mu = a (x-\lambda_1) \cdots (x- \lambda_n)$. If $\lambda_1, \cdots, \lambda_n \notin \sigma(\op A)$, then \begin{align}
@@ -87,17 +89,19 @@ To prove the crucial equality, we first prove a special case of (5) (which holds
         \norm{P(\op A)}^2 =& \norm{P(\op A)^\star P(\op A)} = \norm{(\o{P} P)(\op A)} 
         = \\
         =& \sup_{\lambda \in \sigma [(\o{P} P)(\op A)]} |\lambda| \quad \text{(by Theorem VI.6)} \nonumber \\
-        =& \sup_{\lambda \in \sigma(\op A)} |(\o{P} P)(\lambda)| \quad \text{(by Lemma 1)}  \nonumber \\
+        =& \sup_{\lambda \in \sigma(\op A)} |(\o{P} P)(\lambda)| \quad \text{(by Lemma \ref{Lemma VII.1})}  \nonumber \\
         =& \left( \sup_{\lambda \in \sigma(\op A)} |P(\lambda)| \right)^2 \:. \nonumber
     \end{align}
 \end{proof}
 
-\begin{proof}[Proof of Theorem VII.1]
-    Let $\phi(P) = P(\op A)$. Then $ \norm{\phi(P)}_{\mathcal L(\H)} = \norm{P}_{C(\sigma(\op A))} $, so $\phi$ has a unique linear extension to the closure of the polynomials in $C(\sigma(\op A))$. Since the polynomials are an algebra containing $1$, containing complex conjugates, and separating points, this closure is all of $C(\sigma(\op A))$. Properties (1), (2), (3), (7) are obvious and if $\hat \phi$ obeys (1), (2), (3) it agrees with $\phi$ on polynomials and thus by continuity on $C(\sigma(\op A))$. 
+\begin{proof}[Proof of Theorem \ref{Theorem VII.1}]
+    Let $\phimap(P) = P(\op A)$. Then $ \norm{\phimap(P)}_{\mathcal L(\H)} = \norm{P}_{C(\sigma(\op A))} $, so $\phimap$ has a unique linear extension to the closure of the polynomials in $C(\sigma(\op A))$. Since the polynomials are an algebra containing $1$, containing complex conjugates, and separating points, this closure is all of $C(\sigma(\op A))$. 
     
-    To prove (4), note that $\phi(P)\psi = P(\lambda) \psi$ and apply continuity. 
+    Properties (1), (2), (3), (7) are obvious and if $\hat \phimap$ obeys (1), (2), (3) it agrees with $\phimap$ on polynomials and thus by continuity on $C(\sigma(\op A))$. 
     
-    To prove (6), notice that if $f \geq 0$, then $f = g^2$ with $g$ real and $g \in C(\sigma( \op A))$. Thus $\phi(f) = \phi(g)^2$ with $\phi(g)$ self-adjoint, so $\phi(f) \geq 0$.
+    To prove (4), note that $\phimap(P)\psi = P(\lambda) \psi$ and apply continuity. 
+    
+    To prove (6), notice that if $f \geq 0$, then $f = g^2$ with $g$ real and $g \in C(\sigma( \op A))$. Thus $\phimap(f) = \phimap(g)^2$ with $\phimap(g)$ self-adjoint, so $\phimap(f) \geq 0$.
 
     Finally, (5) is left for the reader (Problem 8).
     
@@ -105,23 +109,23 @@ To prove the crucial equality, we first prove a special case of (5) (which holds
 
 Before turning to some examples, we make several remarks:
 \begin{enumerate}
-    \item $\phi(f) \geq 0$ if and only if $f \geq 0$ (Problem 9).
+    \item $\phimap(f) \geq 0$ if and only if $f \geq 0$ (Problem 9).
     
     \item Since $fg = gf$ for all $f$ and $g$, the set $\set{f(\op A) | f \in C(\sigma(\op A))}$ forms an abelian algebra closed under adjoints. Since $\norm{f(\op A)} = \norm{f}_\infty$ and $C(\sigma( \op A))$ is complete, $\set{f(\op A) | f \in C(\sigma(\op A))}$ is norm-closed. It is thus an \textbf{abelian $C^\star$ algebra} of operators. 
-    \item $\Ran (\phi)$ is actually the $C^\star$ \textbf{algebra generated by} $\op A$, that is, the smallest $C^\star$-algebra containing $\op A$ (Problem 10).
+    \item $\Ran (\phimap)$ is actually the $C^\star$ \textbf{algebra generated by} $\op A$, that is, the smallest $C^\star$-algebra containing $\op A$ (Problem 10).
     \item This result, that $C(\sigma (\op A))$ and the $C^\star$-algebra generated by $\op A$ are isometrically isomorphic, is actually a special case of the \enquote{commutative Gelfand-Naimark theorem} which we discuss in Chapter XV.
-    \item The statement (2) actually follows from (1) and abstract nonsense (Problem 11). Thus (1) and (3) alone determine $\phi$ uniquely.
+    \item The statement (2) actually follows from (1) and abstract nonsense (Problem 11). Thus (1) and (3) alone determine $\phimap$ uniquely.
     
 \end{enumerate}
 
-Finally, we consider two specific examples of $\phi(f)$:
+Finally, we consider two specific examples of $\phimap(f)$:
 
 \begin{example}
     As a corollary, we have a new proof of the existence half of the square-root lemma (Theorem VI.9) for if $\op A \geq 0$, then $\sigma (\op A) \subset  [0, \infty)$ (Problem 12). If $f(x) = x^{1/2}$, then $f(\op A)^2 = \op A$.
 \end{example}
 
 \begin{example}
-    From (7) of Theorem VII.1, we see that $\norm{(\op A - \lambda)^{-1}} = \left[ \mathrm{dist}\, (\lambda, \sigma(\op A)) \right]^{-1}$ if $\op A$ is bounded, self-adjoint, and $\lambda \notin \sigma(\op A)$.
+    From (7) of Theorem \ref{Theorem VII.1}, we see that $\norm{(\op A - \lambda)^{-1}} = \left[ \mathrm{dist}\, (\lambda, \sigma(\op A)) \right]^{-1}$ if $\op A$ is bounded, self-adjoint, and $\lambda \notin \sigma(\op A)$.
 \end{example}
 
 \subsection{The spectral measures}
@@ -142,50 +146,54 @@ The first and simplest application of the $\mu_\psi$ is to allow us to extend th
 \end{align}
 The polarization identity lets us recover $(\psi, g(\op A) \phi)$ from the proposed $(\psi, g(\op A) \psi)$ and then the Riesz lemma lets us construct $g(\op A)$. The properties of this \enquote{measurable functional calculus} are given in (Problem 13):
 
+\footnote{The polarization identity: \begin{align*}
+    4 (x,y) = \left(\norm{x+y}^2 - \norm{x-y}^2 \right) - i \left(\norm{x+iy}^2 - i \norm{x - iy}^2 \right) \:.
+\end{align*} }
+
 \begin{theorem}[Spectral theorem - functional calculus form]
-    Let $\op A$ be a bounded self-adjoint operator in $\H$. There is a unique map $\hat \phi: \mathcal B(\R) \to \mathcal L (\H)$ so that \begin{enumerate}
-        \item $\hat \phi$ is an algebraic $\star$-homomorphism.
-        \item $\hat \phi$ is norm continuous: $\norm{\hat \phi (f)}-{\mathcal L(\H)} = \norm{f}_\infty$.
-        \item Let $f$ be the function $f(x) = x $; then $\hat \phi(f) = \op A$.
-        \item Suppose $f_n(x) \rightarrow f(x)$ for each $x$ and $\norm{f_n}_\infty$ is bounded. Then $\hat \phi(f_n) \rightarrow \hat \phi (f)$ strongly.
+    Let $\op A$ be a bounded self-adjoint operator in $\H$. There is a unique map $\hat \phimap: \mathcal B(\R) \to \mathcal L (\H)$ so that \begin{enumerate}
+        \item $\hat \phimap$ is an algebraic $\star$-homomorphism.
+        \item $\hat \phimap$ is norm continuous: $\norm{\hat \phimap (f)}_{\mathcal L(\H)} = \norm{f}_\infty$.
+        \item Let $f$ be the function $f(x) = x $; then $\hat \phimap(f) = \op A$.
+        \item Suppose $f_n(x) \rightarrow f(x)$ for each $x$ and $\norm{f_n}_\infty$ is bounded. Then $\hat \phimap(f_n) \rightarrow \hat \phimap (f)$ strongly.
     \end{enumerate}
     
-    Moreover, $\hat \phi$ has the properties:
+    Moreover, $\hat \phimap$ has the properties:
     \begin{enumerate}
-        \item If\, $\op A \psi = \lambda \psi$, the $\hat \phi(f) \psi = f(\lambda) \psi$.
-        \item If\, $f \geq 0$, then $\hat \phi (f) \geq 0$.
-        \item If\, $\op B \op A = \op A \op B$, then $\hat \phi (f) \op B = \op B \hat \phi(f)$.
+        \item If\, $\op A \psi = \lambda \psi$, the $\hat \phimap(f) \psi = f(\lambda) \psi$.
+        \item If\, $f \geq 0$, then $\hat \phimap (f) \geq 0$.
+        \item If\, $\op B \op A = \op A \op B$, then $\hat \phimap (f) \op B = \op B \hat \phimap(f)$.
     \end{enumerate}
 \end{theorem}
 
-Theorem VII.2 can be proven directly by extending Theorem VII.1; part (4) requires the dominated convergence theorem. Or, Theorem VII.2 can be proven by an easy corollary of Theorem VII.3 below. The proof of Theorem VIL3 uses only the \textit{continuous} functional calculus. $\hat \phi$ extends $\phi$ and as before we write $\hat \phi (f) = f(\op A)$. As in the continuous functional calculus, one has $f(\op A) g(\op A) = g(\op A) f(\op A)$.
-Since $\mathcal B (\R)$ is the smallest family closed under limits of form (4) containing all of $C(\R)$, we know that any $\hat \phi$ is in the smallest $C^\star$-algebra containing $\op A$ which is also strongly closed; such an algebra is called a von Neumann or $W^\star$-algebra. When we study von Neumann algebras in Chapter XVIII we will see that this follows from (7).
-The norm equality of Theorem VII.I carries over if we define $\norm{f}_\infty '$, to be the $L^\infty$-norm with respect to a suitable notion of \enquote{almost everywhere}. Namely, pick an orthonormal basis $\set{\psi_n}$ and say that a property is true a.e. if it is true a.e. with respect to \textit{each} $\mu_{\psi_i}$. Then $\norm{ \hat \phi (f)}_{\mathcal L(\H)} =\norm{f}_\infty '$.
+Theorem VII.2 can be proven directly by extending Theorem VII.1; part (4) requires the dominated convergence theorem. Or, Theorem VII.2 can be proven by an easy corollary of Theorem VII.3 below. The proof of Theorem VIL3 uses only the \textit{continuous} functional calculus. $\hat \phimap$ extends $\phimap$ and as before we write $\hat \phimap (f) = f(\op A)$. As in the continuous functional calculus, one has $f(\op A) g(\op A) = g(\op A) f(\op A)$.
+Since $\mathcal B (\R)$ is the smallest family closed under limits of form (4) containing all of $C(\R)$, we know that any $\hat \phimap$ is in the smallest $C^\star$-algebra containing $\op A$ which is also strongly closed; such an algebra is called a von Neumann or $W^\star$-algebra. When we study von Neumann algebras in Chapter XVIII we will see that this follows from (7).
+The norm equality of Theorem VII.I carries over if we define $\norm{f}_\infty '$, to be the $L^\infty$-norm with respect to a suitable notion of \enquote{almost everywhere}. Namely, pick an orthonormal basis $\set{\psi_n}$ and say that a property is true a.e. if it is true a.e. with respect to \textit{each} $\mu_{\psi_i}$. Then $\norm{ \hat \phimap (f)}_{\mathcal L(\H)} =\norm{f}_\infty '$.
 In the next section, we will return to the operators $\chi_\Omega (\op A)$ where $\chi_\Omega$ is a characteristic function; this is the most important set of operators in the measurable but not in the continuous functional calculus. For the time being, we turn to using the spectral measures to form $L^2$ spaces. We first define:
 
 \begin{definition}
-    A vector $\psi \in \H$ is called a \textbf{cyclic vector} for $\op A$ if finite linear combinations of the elements $\set{\op A^n}_{n=0}^\infty$ are dense in $\H$.
+    A vector $\psi \in \H$ is called a \textbf{cyclic vector} for $\op A$ if finite linear combinations of the elements $\set{\op A^n \psi}_{n=0}^\infty$ are dense in $\H$.
 \end{definition}
 
-Not all operators ohave cyclic vectors (Problem 14), but if they do:
+Not all operators have cyclic vectors (Problem 14), but if they do:
 
 \begin{lemma}
     Let $\op A$ be a bounded self-adjoint operator with cyclic vector $\psi$. Then, there is a unitary operator $\op U: \H \to \L{2}{\sigma(\op A), \D \mu_\psi}$ with \begin{align}
-        (\op U \op A \op U^{-1} f) (\lambda) = \lambda f(\lambda) \::
+        (\op U \op A \op U^{-1} f) (\lambda) = \lambda f(\lambda) \:.
     \end{align}
     Equality is in the sense of elements of $\L{2}{\sigma(\op A), \D \mu_\psi}$.
 \end{lemma}
 
 \begin{proof}
-    Define $\op U$ by $\op U \phi(f) \psi \equiv f$ where $f$ is continuous. $\op U$ is essentially the inverse of the map $\phi$ of Theorem VII.1. To show that $\op U$ is well defined we compute
+    Define $\op U$ by $\op U \phimap(f) \psi \equiv f$ where $f$ is continuous. $\op U$ is essentially the inverse of the map $\phimap$ of Theorem \ref{Theorem VII.1}. To show that $\op U$ is well defined we compute
     \begin{align}
-        \norm{\phi(f) \psi}^2 = \left( \psi, \phi^\star (f) \phi(f) \psi \right) = \left( \psi, \phi (\o f f) \psi \right) = \int |f(\lambda)|^2 \, \D \mu_\psi \:.
+        \norm{\phimap(f) \psi}^2 = \left( \psi, \phimap^\star (f) \phimap(f) \psi \right) = \left( \psi, \phimap (\o f f) \psi \right) = \int |f(\lambda)|^2 \, \D \mu_\psi \:.
     \end{align}
-    Therefore, if $f=g$ a.e. with respect to $\mu_\psi$, then $\phi(f) \psi = \phi(g) \psi$. Thus $\op U$ is well defined on $\set{\phi(f) | f \in C (\sigma (\op A))}$ and is norm preserving. Since $\psi$ is cyclic, \begin{align}
-        \o{ \set{ \phi(f) \psi | f \in C (\sigma (\op A))  } } = \H \:,
+    Therefore, if $f=g$ a.e. with respect to $\mu_\psi$, then $\phimap(f) \psi = \phimap(g) \psi$. Thus $\op U$ is well defined on $\set{\phimap(f) | f \in C (\sigma (\op A))}$ and is norm preserving. Since $\psi$ is cyclic, \begin{align}
+        \o{ \set{ \phimap(f) \psi | f \in C (\sigma (\op A))  } } = \H \:,
     \end{align}
     so by the B.L.T. theorem $\op U$ extends to an isometric map of $\H$ into $\L{2}{\sigma(\op A), \D \mu_\psi}$. Since $C(\sigma (\op A))$ is dense in $L^2$, $\Ran \op U = \L{2}{\sigma(\op A), \D \mu_\psi}$. Finally, if $f \in C(\sigma (\op A))$, \begin{align}
-        (\op U \op A \op U^{-1} f )(\lambda) = [\op U \op A \phi(f)](\lambda) = [\op U \phi(xf)](\lambda) = \lambda f (\lambda) \:.
+        (\op U \op A \op U^{-1} f )(\lambda) = [\op U \op A \phimap(f)](\lambda) = [\op U \phimap(xf)](\lambda) = \lambda f (\lambda) \:.
     \end{align}
     By continuity, this extends from $f \in C(\sigma (\op A))$ to $f \in L^2$.
 \end{proof}

@@ -13,7 +13,9 @@ headinclude,footinclude, % Extra spacing for the header and footer
 BCOR5mm, % Binding correction
 ]{scrartcl}
 
-
+% Roman numerals for sections and subsections
+\renewcommand{\thesection}{\Roman{section}} 
+%\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
 
 
 \input{Styles/structure} % Include the structure.tex file which specified the document structure and layout
