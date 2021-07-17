@@ -1519,6 +1519,11 @@ INPUT /usr/share/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusSans-Bold
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSans-Bold-tlf-sc-t1--base.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusSans-Bold-tlf-t1.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSans-Bold-tlf-t1--base.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/public/mathpazo/zplmr7v.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-BoldItalic-tlf-t1.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusSerif-BoldItalic-tlf-t1.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-BoldItalic-tlf-t1--base.tfm

@@ -16,7 +16,14 @@ there is a unitary operator $\op U: V \to \C^n$ and real numbers $\lambda_1, \cd
 \end{align}
 
 In practice, $M$ will be a union of copies of $\R$ and $F$ will be $x$, so the core of the proof of the theorem will be the construction of certain measures.
-This will be done in Section VII.2 by using the Riesz-Markov theorem. Our goal in this section will be to make sense out of $f(\op A)$, for $f$ a continuous function. In the next section, we will consider the measures defined by the functionals $f \mapsto [\psi, f(\op A) \psi]$ for fixed $\psi \in \H$.
+This will be done in Section VII.2 by using the Riesz-Markov theorem
+\footnote{
+    The theorem reads as follows: Let $X$ be a compact Hausdorff space. For any positive linear functional $\ell$ on $C(X)$ there is a unique Baire measure $\mu$ on $X$ with 
+\begin{align*} 
+    \ell(f) = \int f \, \D \mu \:.
+\end{align*}
+}
+. Our goal in this section will be to make sense out of $f(\op A)$, for $f$ a continuous function. In the next section, we will consider the measures defined by the functionals $f \mapsto [\psi, f(\op A) \psi]$ for fixed $\psi \in \H$.
 
 Given a fixed operator $\op A$, for which $f$ can define $f(\op A)$?
 First, suppose that $\op A$ is an arbitrary bounded operator. If $f(x) = \sum_{n=1}^N a_n x^n$ is a polynomial, we want $f(\op A) = \sum_{n=1}^N a_n \op A^n$. Suppose that $f(x) = \sum_{n=0}^\infty c_n x^n$ is a power series with radius of convergence $R$. If $\norm{A} \leq R$, then $\sum_{n=0}^\infty c_n \op A^n$ converges in $\mathcal{L}(\H)$ so it is natural to set $f(A) = \sum_{n=0}^\infty c_n \op A^n$. In this last case, $f$ was a function analytic in a domain including all of $\sigma(\op A)$. In general, one can make a reasonable definition for $f(\op A)$ if fis analytic in a neighborhood of $\sigma(\op A)$ (see the Notes).
@@ -230,4 +237,93 @@ This theorem tells us that every bounded self-adjoint operator is a multiplicati
     Choose the cyclic vectors $\phi_n$, so that $\norm{\phi_n} = 2^{-n}$. Let $M = \cup_{n=1}^N \R$ i.e. the union of $N$ copies of $\R$. Define $\mu$ by requiring that its restriction to the nth copy of $\R$ be $\mu_n$. Since $\mu(M) = \sum_{n=1}^N \mu_n(\R) < \infty$, $\mu$ is finite.
 \end{proof}
 
-[KONEC 227]
+We also notice that this last theorem is essentially a rigorous form of the physicist's Dirac notation.
+If we write $\psi_n(x) = \psi(x;n)$, we see that in the \enquote{new representation defined by U} one has
+\begin{align}
+    (\psi, \phi) =& \sum_n \int \, \D \mu_n \o{ \psi(\lambda; n)} \phi(\lambda; n) \:, \\
+    (\psi, \op A \phi) =& \sum_n \int \, \D \mu_n \o{ \psi(\lambda; n)} \lambda \phi(\lambda; n) \:.
+\end{align}
+
+These are the Dirac type formulas familiar to physicists except that the formal sums of Dirac are replaced with integrals over spectral measures, where we define:
+
+\begin{definition}
+    The measures $\D \mu_n$ are called \textbf{spectral measures}; they are just $\D \mu_\psi$ for suitable $\psi$.
+\end{definition}
+
+These measures are not uniquely determined and we will eventually discuss this nonuniqueness question. First, let us consider a few examples:
+
+\begin{example}
+Let $\op A$ be an $n \times n$ self-adjoint matrix. The \enquote{usual} finite- dimensional spectral theorem says that $\op A$ has a complete orthonormal set of eigenvectors, $\psi_1, \cdots, \psi_n$ with $\op A \psi_i = \lambda_i \psi_i$. Suppose first that the eigenvalues are distinct.
+Consider the sum of Dirac measures, $\mu = \sum_{i=1}^n a_i \delta(x-\lambda_i)$. $\L{2}{\R, \D \mu} $ is just $\C^n$ since $f \in L^2$ is determined by $f = [f(\lambda_1), \cdots, f(\lambda_n)]$.
+Clearly, the function $\lambda f$ corresponds to the $n$-tuple $f = [\lambda_1 f(\lambda_1), \cdots, \lambda_n f(\lambda_n)]$ so $\op A$ is multiplication by $\lambda$ on $\L{2}{\R, \D \mu}$. If we take $\tilde \mu = \sum_{i=1}^n a_o \delta(x-\lambda_i)$ with $a_1, \dots, a_n >0$, $\op A$ can also be represented as multiplication by $\lambda$ on $\L{2}{\R, \D \tilde \mu}$. Thus, we explicitly see the nonuniqueness of the measure in this case. We can also see when more than one measure is needed: one can represent a finite-dimensional self-adjoint operator as multiplication on $\L{2}{\R, \D \tilde \mu}$ with only one measure if and only if $\op A$ has no repeated eigenvalues.
+\end{example}
+
+\begin{example}
+Let $\op A$ be compact and self-adjoint. The Hilbert-Schmidt theorem tells us there is a complete orthonormal set of eigenvectors $\set{\psi_n}_{n=1}^\infty$ with $\op A \psi_n = \lambda_n \psi_n$. If there is no repeated eigenvalue, $\sum_{n=1}^\infty 2^{-n} \delta(x-\lambda_n)$ works as a spectral measure.
+\end{example}
+
+\begin{example}
+Let $\H = l^2(-\infty, +\infty)$, that is, the set of sequences, $\set{a_n}_{n=-\infty}^{+\infty}$ with $\sum_{n=-\infty}^{+\infty} |a_n|^2 < \infty$. Let $\op L : \H \to \H$ by $(\op L a)_n = a_{n+1}$, that is, $\op L$ shifts to the left. $\op L^\star = \op R$ with $(\op R a)_n = a_{n-1}$. Let $\op A = \op R + \op L$ which is self-adjoint. Can we represent $\op A$ as a multiplication operator? Map $\H$ into $\L{2}{[0,1]}$ by $\op U: \set{a_n} \mapsto \sum_{n=-\infty}^\infty a_n e^{2 \pi i n x}$.
+Then $\op U \op L \op U^{-1}$ is multiplication by $e^{-2 \pi i x}$ and $\op U \op R \op U^{-1}$ is multiplication by $e^{+2 \pi i x}$ so $\op U \op A \op U^{-1}$ is multiplication by $2 cos( 2 \pi x)$. 
+The necessary transformations needed to represent $\op A$ as multiplication by $x$ on $\L{2}{\R, \D \mu_1} \oplus \L{2}{\R, \D \mu_2} $ are left for the problems. $\mu_1$ and $\mu_2$ have support in $[-2, 2]$.
+\end{example}
+
+\begin{example}
+Consider $\frac{1}{i} \der{}{x}$ on $\L{2}{\R, \D x}$. This is an unbounded operator and thus not strictly within the context of this section, but we will prove an analogue of Theorem VII.3 in Section VIII3. We thus seek an operator $\op U$ and a measure $\D \mu$ (it turns out that only one $\mu$ is needed) with $\op U : \L{2}{\R, \D x} \to \L{2}{\R, \D \mu(k)}$ so that
+\begin{align}
+    \op U \left( \frac{1}{i} \der{f}{x} \right) (k) = k \op U f(k) \:.
+\end{align}
+The Fourier transform $(\op U f)(k) = \frac{1}{\sqrt{2 \pi}} \int f(x) e^{-ikx} \, \D x$ which we study in Chapter IX precisely does the trick. Thus, the Fourier transform is one example of a spectral representation.
+\end{example}
+
+We now investigate the connection between spectral measures and the
+spectrum.
+
+\begin{definition}
+    If $\set{\mu_n}_{n=1}^N$ is a family of measures, the \textbf{support} of $\set{\mu_n}$ is the complement of the largest open set $B$ with $\mu_n (B) = 0$ for all $n$; so \begin{align}
+        \supp \set{\mu_n} = \o { \bigcup_{n=1}^N \supp \mu_n } \:.
+    \end{align}
+\end{definition}
+
+\begin{proposition}
+    Let $\op A$ be a self-adjoint operator and $\set{\mu_n}_{n=1}^N$ a family of spectal measures. Then \begin{align}
+        \sigma(\op A) = \supp \set{\mu_n}_{n=1}^N \:.
+    \end{align}
+\end{proposition}
+
+There is also a simple description of $\sigma(\op A)$ in terms of the more multiplication operators discussed after Theorem VII.3:
+
+\begin{definition}
+    Let $F$ be a real-valued function on a measure space $(M, \mu)$. We say $\lambda$ is in the \textbf{essential range} of $F$ if and only if \begin{align}
+        \forall \varepsilon > 0 \: : \quad  \mu \set{m | \lambda - \varepsilon < F(m) < \lambda + \varepsilon } > 0 \:.
+    \end{align}
+\end{definition}
+
+\begin{proposition}
+    Let $F$ be a real-valued function on a measure space $(M, \mu)$. Let $\op T_F$ be the operator on $\L{2}{M, \D \mu}$ given by \begin{align}
+        (\op T_F g)(m) = F(m) g(m) \:.
+    \end{align}
+    Then $\sigma(\op T_F)$ is the essential range of $F$.
+\end{proposition}
+
+\begin{proof}
+    See Problem 17b.
+\end{proof}
+
+We can now see exactly what information is contained in the spectrum. A unitary invariant of a self-adjoint operator $\op A$ is a property $P$ so that $P(\op A) = P(\op U \op A \op U^{-1})$ for all unitary operators $\op U$. Thus, unitary invariants are \enquote{intrinsic} properties of self-adjoint operators, that is, properties independent of \enquote{representation}. An example of such a unitary invariant is the spectrum $\sigma( \op A)$. However, the spectrum is a poor invariant: for example, multiplication by $x$ on $\L{2}{[0,1], \D x}$ and an operator with a complete set of eigenfunctions having all rationals in $[0, 1]$ as eigenvalues are very different even though both have spectrum $[0, 1]$.
+At the conclusion of this section, we will see that there is a canonical choice of “spectral measures” which forms a complete set of unitary invariants, that is, a set of properties which distinguish two self-adjoint operators $\op A$ and $\op B$ unless $\op A = \op U \op B \op U^{-1} $ for some unitary operator $\op U$. This explains why $\sigma (\op A)$ is such a bad invariant for different sorts of measures can have the same support. If we wish to find better invariants which are, however, simpler than measures, it is reasonable to first decompose spectral measures in some natural way and then pass to supports.
+Recall Theorem I.13 which says that any measure $\mu$ on $\R$ has a unique decomposition into $\mu = \mupp + \muac + \musing $ where $\mupp$ is a pure point measure, $\muac$ is absolutely continuous with respect to Lebesgue measure, and $\musing$ is continuous and singular with respect to Lebesgue measure. These three pieces are mutually singular so
+\begin{align}
+    \L{2}{\R, \D \mu} = \L{2}{\R, \D \mupp} \oplus \L{2}{\R, \D \muac} \oplus \L{2}{\R, \D \musing} \:.
+\end{align}
+It is easy to see (Problem 18) that any $\psi \in \L{2}{\R, \D \mu}$ has an absolutely continuous spectral measure $\D \mu_\psi$ if and only if $\psi \in \L{2}{\R, \D \mu}$ and similarly for pure point and singular measures. If $\set{\mu_n}_{n=1}^N$ is a family of spectral measures, we can sum $\oplus_{n=1}^N \L{2}{\D \mu_{n ; \mathrm{ac}}}$ by defining:
+
+\begin{definition}
+    Let $\op A$ be a bounded self-adjoint operator on $\H$. Let $\Hpp = \set{\psi | \mu_\psi \text{ is pure point}}$, $\Hac = \set{\psi | \mu_\psi \text{ is absolutely continuous}}$ and $ \Hsing = \set{\psi | \mu_\psi \text{ is continuous singular}}$.
+\end{definition}
+
+We have thus proven:
+
+\begin{theorem}
+    $\H = \Hpp \oplus \Hac \oplus \Hsing$. Each of these subspaces is invariant under $\op A$. $\op A|_{\Hpp}$ is a complete set of eigenvectors, $\op A|_{\Hac}$ has only absolutely continuous spectral measures and $\op A|_{\Hsing}$ has only continuous singular spectral measures.
+\end{theorem}
