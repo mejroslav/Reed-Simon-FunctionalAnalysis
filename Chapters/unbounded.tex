@@ -246,7 +246,7 @@ The distinction between closed symmetric operators and self-adjoint operators is
 A symmetric operator $\op T$ is called \textbf{essentially self-adjoint} if its closure $\o{\op T}$ is self-adjoint. If $\op T$ is closed, a subset $D \subset D(\op T)$ is called a \textbf{core} for $\op T$ if $\o{\op T|_{D}} = \op T$. 
 \end{definition}
 
-If $\op T$ is essentially self-adjoint, then it has one and only one self-adjoint extension, for suppose that $\op S$ is a self-adjoint extension of $\op T$. Then, $\op S$ is closed and thereby, since $\op S \supset \op T$, $\op S \supset \op T^{\star \star}$. Thus, $\op S = \op S^\star \subset (\op T^{\star \star})^\star = \op T^{\star \star}$, and so
+If $\op T$ is essentially self-adjoint, then it has one and only one self-adjoint extension, for suppose that $\op S$ is a self-adjoint extension of $\op T$. Then, $\op S$ is closed and thereby, since $\op S \supset \op T$, $\op S \supset \op T^{\star \star}$. Thus, $\op S = \op S^\star \subset (\o{\op T})^\star = (\op T^{\star \star})^\star  = \o{\op T}= \op T^{\star \star}$, and so
 $\op S = \op T^{\star \star}$. The converse is also true; namely, if $\op T$ has one and only one self-adjoint extension, then $\op T$ is essentially self-adjoint (see Section X.1). Since
 $\op T^{\star} = (\op{\o T} )^{\star} = \op T^{\star \star \star}$, $\op T$ is essentially self-adjoint if and only if
 \begin{align}
@@ -280,19 +280,22 @@ prove (3). Since $\op T^\star \phi = -\i \phi$ has no solutions, $\Ran (\op T- \
 Otherwise, if $\psi \in \Ran ( \op T- \i )^\bot$, we would have 
 \newline
 $\left((\op T-\i) \phi, \psi \right) =0$ for all $\phi \in D(\op T)$, so $\psi \in D(\op T^\star)$ and $(\op T - \i)^\star \psi = (\op T^\star + \i) \psi = 0$ which is impossible since $\op T^\star \psi = - \i \psi $ has no solutions.
-(Reversing this last argument we can show that if $\Ran ( \op T - \i)$ is dense, the kernel of $\op T^\star + \i $ is $\set{0}$.) Since $\Ran ( \op T - \i)$  is dense, we need only prove it is closed to conclude that $\Ran ( \op T - \i) = \H$ . But for all $\phi \in D(\op T)$
-\begin{align}
-    \norm{(\op T - \i) \phi}^2 = |\left((\op T - i) \phi, (\op T - i) \phi  \right)|
-    = |(\op T \phi, \op T \phi) + ( i \phi, \op T \phi) - (\op T \phi, i \phi) + (\phi, \phi)|
-    = \norm{\op T \phi}^2 + \norm{\phi}^2 \:.
-\end{align}
+(Reversing this last argument we can show that if $\Ran ( \op T - \i)$ is dense, the kernel of $\op T^\star + \i $ is $\set{0}$.) 
 
-Thus if $\phi_n \in D(\op T)$ and $(\op T - \i) \phi_n \rightarrow \psi_0$, we conclude that $\phi_n$ converges to some vector $\phi_0$ and $\op T \phi_n$ converges too. Since $\op T$ is closed, $\phi_0 \in D(\op T)$ and $(\op T - \i) \phi_0 = \psi_0$. Thus, $\Ran(\op T - \i)$ is closed, so $\Ran (\op T - \i) = \H$. Similarly, $\Ran(T+\i) = \H$.
+Since $\Ran ( \op T - \i)$  is dense, we need only prove it is closed to conclude that $\Ran ( \op T - \i) = \H$ . But for all $\phi \in D(\op T)$
+\begin{align}
+    \norm{(\op T - \i) \phi}^2 
+    =& |\left((\op T - \i) \phi, (\op T - \i) \phi  \right)|
+    = |(\op T \phi, \op T \phi) + ( \i \phi, \op T \phi) + (\op T \phi, \i \phi) + (\phi, \phi)|
+    = \\ =& \norm{\op T \phi}^2 - (\op T \phi, \i \phi) + (\op T \phi, \i \phi)  + \norm{\phi}^2
+    = \norm{\op T \phi}^2 + \norm{\phi}^2 \:. \nonumber
+\end{align}
+Thus if $\phi_n \in D(\op T)$ and $(\op T - \i) \phi_n \rightarrow \psi_0$, we conclude that $\phi_n$ converges to some vector $\phi_0$ and $\op T \phi_n$ converges too. Since $\op T$ is closed, $\phi_0 \in D(\op T)$ and $(\op T - \i) \phi_0 = \psi_0$. Thus, $\Ran(\op T - \i)$ is closed, together with density we obtain $\Ran (\op T - \i) = \H$. Similarly, $\Ran(T+\i) = \H$.
 
 Finally, we will show that (3) implies (1). Let $\phi \in D(\op T^\star)$. Since $\Ran (\op T -\i) = \H$, there is an $\eta \in D(\op T)$ so that $(\op T - \i) \eta = (\op T^\star - \i) \phi$. $D(\op T) \subset D(\op T^\star)$, so $\phi - \eta \in D(\op T^\star)$ and \begin{align}
     (\op T^\star - \i)(\phi - \eta) = 0 \:.
 \end{align}
-Since $\Ran(\op T +\i) )=\H$, $\Ker (\op T^\star - \i) = \set{0}$, so $\phi - \eta \in D(\op T)$. This proves that $D(\op T^\star) = D(\op T)$, so $\op T$ is self-adjoint.
+Since $\Ran(\op T +\i )=\H$, $\Ker (\op T^\star - \i) = \set{0}$, so $\phi - \eta \in D(\op T)$. This proves that $D(\op T^\star) = D(\op T)$, so $\op T$ is self-adjoint.
 
 \end{proof}
 
@@ -350,7 +353,7 @@ This mean that $\psi$ is absolutely continous (see the Notes for Section VIII.1)
 Thus, $\psi \in AC[0,1]$ and $\op T^\star \psi = \i \der{\psi}{x} $. Conversely, integration by parts
 shows that any $\psi \in AC[0,1]$ is in the domain of $\op T^\star$ and $\op T^\star \psi = \i \der{\psi}{x}$. Therefore $\op T^\star = \i \der{}{x}$ on $D(\op T^\star) = AC[0,1]$.
 It is easy to see that $\op T$ is not essentially self-adjoint since \begin{align}
-    e^{\pm x} \in D(\op T^\star) \quad \text{and } \quad \i \der{}{x} e^{\pm x} = \pm \i e^{\pm x} \:.
+    e^{\pm x} \in D(\op T^\star) \quad \text{and } \quad \i \der{}{x} e^{\pm i x} = \pm \i e^{\pm  i x} \:.
 \end{align}
 In fact, $\op T$ is closed (Problem 6).
 
