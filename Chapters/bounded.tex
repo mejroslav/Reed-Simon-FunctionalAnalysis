@@ -1,0 +1,89 @@
+
+\setcounter{section}{5}
+\section{Bounded Operators}
+
+\subsection{Topologies on bounded operators}
+
+one Banach space to another. In this chapter we will study $\Lin{X,Y}$ more
+closely. We emphasize the case which will arise most frequently later, namely,
+$\Lin{\H, \H} \equiv \Lin{H}$ where $\H$ is a separable Hilbert space. Theorem III.2
+shows that $\Lin{X,Y}$ is a Banach space with the norm \begin{align}
+    \norm{\op T} = \sup_{x \neq 0} \frac{\norm{\op T x}_Y}{\norm{x}_X} \:.
+\end{align}
+The induced topology on $\Lin{X,Y}$ is called the \textbf{uniform operator topology} (or \textbf{norm topology}). In this topology the map $[A,B] \mapsto BA$ of $\Lin{X,Y} \times \Lin{X,Y} \to \Lin{X,Z}$ is jointly continuous.
+We now introduce two new topologies on $\Lin{X,Y}$, the weak and strong operator topologies. There are other interesting and useful topologies on $\Lin{X,Y}$, but we delay their introduction until we need them in a later volume (see however the discussion at the end of Section 6 and the Notes).
+
+The \textbf{strong operator topology} is the weakest topology on $\Lin{X,Y}$ such that the maps \begin{align}
+    E_x : \Lin{X,Y} \to Y 
+\end{align}
+given by $E_X(\op T) = \op T x$ are continuous for all $x \in X$. A neighborhood basis at the origin is given by sets of the form \begin{align}
+    \set{\op S | \op S \in \Lin{X,Y} \:, \: \norm{\op S x_i}_Y < \varepsilon \:, \: i = 1, \cdots, n}
+\end{align}
+where $\set{x_i}_{i=1}^n$ is a finite collection of elements of $X$ and $\varepsilon$ is positive. In this topology a net $\set{T_\alpha}$ of operators converges to an operator $\op T$ (written $\op T_\alpha \cs \op T$ if and only if $\norm{\op T_\alpha x - \op T x}$ for all $x \in X$. The map $[\op A, \op B] \mapsto \op A \op B$ is separately but not jointly continuous if $X$, $Y$, and $Z$ are infinite dimensional (see Problem 6a, b). We sometimes denote strong limits by the symbol $\slim$.
+
+The \textbf{weak operator topology} on $\Lin{X,Y}$ is the weakest topology such that the maps
+\begin{align}
+    E_{x, \ell} : \Lin{X,Y} \to \C 
+\end{align}
+given by $E_{x, \ell}(\op T) = \ell(\op T x)$ are all continuous for all $x \in X$, $\ell \in Y^\star$. A basis at the origin is given by sets of the form \begin{align}
+    \set{\op S | \op S \in \Lin{X,Y} \:; \: |\ell_i(\op T x_j)| < \varepsilon \:; \: i = 1, \cdots , n \:; \: j = 1, \cdots, m} 
+\end{align}
+where $\set{x_i}_{i=1}^n$ and $\set{\ell_j}_{j=1}^m$ are finite families of elements of $X$ and $Y^\star$ respectively. A net of operators $\set{\op T_\alpha}$ converges to an operator $\op T$ in the weak operator topology (written $\op T_\alpha \cw \op T$) if and only if $|\ell (\op T_\alpha x) - \ell (\op T x)| \rightarrow 0$ for each $l \in Y^\star$ and $x \in X$. Notice that in the case $\Lin{\H}$, $T_\gamma \cw$ just means that the \enquote{matrix elements} $(y, \op T_\gamma x)$ converge to $(y, \op T x)$. In the weak topology the map $[\op A, \op B] \mapsto \op A \op B$ is separately, but not jointly continuous if $X$, $Y$ and $Z$ are infinite dimensional (see Problem 6c).
+
+\begin{remark}
+    The reader should not confuse the weak operator topology on $\Lin{X,Y}$ with the weak (Banach space) topology on $\Lin{X,Y}$. The former is the weakest topology such that the bounded linear functionals on $\Lin{X,Y}$ of the form $\ell(\cdot x)$ are continuous for all $x \in X$ and $\ell \in Y^\star$. The latter is the weakest topology such that \textit{all} bounded linear functionals on $\Lin{X,Y}$ are continuous (see Section VI.6).
+\end{remark}
+
+Notice that the weak operator topology is weaker than the strong operator topology which is weaker than the uniform operator topology. In general, the weak and strong operator topologies on $\Lin{X,Y}$ will not be first countable so that questions of compactness, net convergence, and sequential convergence are complicated. The following simple example illustrates the different topologies on $\Lin{\ell_2}$.
+
+\begin{example}
+    Consider the bounded operators on $\ell_2$.
+    \begin{enumerate}
+        \item Let $\op T_n$ be defined by \begin{align}
+            \op T_n (\xi_1, \xi_2, \cdots) = \left( \frac{1}{n} \xi_1, \frac{1}{n} \xi_2, \cdots \right) \:.
+        \end{align}
+        Then $\op T_n \rightarrow 0$ uniformly.
+
+        \item Let $\op S_n$ be defined by \begin{align}
+            \op S_n(\xi_1, \xi_2, \cdots) = \left( 0,0, \cdots, 0, \xi_{n+1}, \xi_{n+2}, \cdots \right) \:.
+        \end{align}
+        Then $\op S_n \rightarrow 0$ strongly but not uniformly.
+
+        \item Let $\op W_n$ be defined by \begin{align}
+            \op W_n(\xi_1, \xi_2, \cdots) = \left( 0,0, \cdots, 0, \xi_1, \xi_2, \cdots \right) \:.
+        \end{align}
+        Then $\op W_n \rightarrow 0$ in the weak operator topology but not in the strong or uniform topologies.
+    \end{enumerate}
+
+\end{example}
+
+The following result in the Hilbert space case is sometimes useful and provides
+a nice application of the uniform boundedness theorem.
+
+\begin{theorem}
+    Let $\Lin{H}$ denote the bounded operators on a Hilbert space $\H$. Let $\op T_n$ be a \textit{sequence} of bounded operators and suppose that $(\op T_n x, y)$ converges as $n \rightarrow \infty$ for each $x,y \in \H$. Then there exists $\op T \in \Lin{\H}$ such that $\op T_n \cw \op T$.
+\end{theorem}
+
+\begin{proof}
+    We begin by showing that for each $x$, $\sup_n \norm{\op T_n x} < \infty$. Since for any $x \in \H$, $(x, \op T_n y)$ converges we have \begin{align}
+        \sup_n |(\op T_n x, y)| < \infty \:.
+    \end{align}
+    For each $n$, $\op T_n x \in \Lin{\H, \C}$, and since $\sup_n |(\op T_n x)(y)|_{\C} < \infty$, the uniform boundedness theorem implies that the operator norms of the $\op T_nx$ in $\Lin{\H, \C}$ is the same as its norm in $\H$; thus $\norm{\op T_n x}_{\H}$ is uniformly bounded.
+
+    Now, we use the uniform boundedness theorem again. Since \begin{align}
+        \sup_n \norm{\op T_n x}_{\H} < \infty \:,
+    \end{align}
+    we conclude \begin{align}
+        \sup_n \norm{\op T_n}_{\Lin{\H}} < \infty \:.
+    \end{align}
+    Define $B(x,y) = \lim_n (\op T_n x, y)$. Then it is easily verified that $B(x,y)$ is sesquilinear and \begin{align}
+        |B(x,y)| \leq \lim_n |(\op T_n x,y)| \leq \norm{x} \norm{y} (\sup_n \norm{\op T_n}) \:.
+    \end{align}
+    Thus $B(x,y)$ is a bounded sesquilinear form on $\H$ and so, by the corollary to the Riesz lemma, there is a bounded operator $\op T \in \Lin{\H}$ sush that $B(x,y) = (\op T x,y)$. Clearly $\op T_n \cw \op T$.
+\end{proof}
+
+If a sequence of operators $\op T_n$, on a Hilbert space has the property that $\op T_n x$ converges for each $x \in \H$, then there exists $\op T \in \Lin{\H}$ such that $\op T_n \cs \op T$. The reader is asked to prove this theorem and various generalizations in Problem 3.
+
+Let $\op T \in \Lin{X,Y}$. The set of vectors $x \in X$ so that $\op T x = 0$ is called the \textbf{kernel} of $\op T$, written $\Ker \op T$. The set of vectors $y \in Y$ that $y = \op T x$ for some $x \in X$ is called the \textbf{range} of $\op T$, written $ \Ran \op T$. Notice that both $\Ker \op T$ and $\Ran \op T$ are subspaces. Ker $\op T$ is necessarily closed, but $\Ran \op T$ may not be closed (Problem 7).
+
+\subsection{Adjoints}
