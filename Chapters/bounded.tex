@@ -219,7 +219,92 @@ function $x(\cdot)$ on $D$ with values in $X$ is said to be \textbf{weakly analy
     \end{align}
     Since $\ell(x(z))$ is continuous on $\Gamma$ and $\Gamma$ is compact, $|\ell(x(z)) \leq C_\ell$ for all $z \in \Gamma$. Regarding $x(z)$ as a family of mappings $x(z) : X^\star \to \C$ we see that $x(z)$ is pointwise bounded at each $\ell$ so by the uniform boundedness theorem $\sup_{z \in \Gamma} \norm{x(z)} \leq C < \infty$. Thus \begin{align}
         \left| \ell \left( \frac{x(z_0+h)-x(z_0)}{h}\right) - \der{}{z} \ell(x(z_0)) \right| \leq \\
-        \leq \frac{1}{2 \pi} \norm{\ell} \left( \sup_{z \in \Gamma} \norm{x(z)} \right) \oint_\Gamma \left| \frac{1}{(z-(z_0+h))(z-z_0)} - \frac{1}{(z-z_0)^2}\right| \, \D z
+        \leq \frac{1}{2 \pi} \norm{\ell} \left( \sup_{z \in \Gamma} \norm{x(z)} \right) \oint_\Gamma \left| \frac{1}{(z-(z_0+h))(z-z_0)} - \frac{1}{(z-z_0)^2}\right| \, \D z \:.
     \end{align}
-
+    This estimate shows that $\frac{x(z_0+h)-x(z_0)}{h}$ is uniformly Cauchy for $\norm{\ell} \leq 1$. By the lemma, $\frac{x(z_0+h)-x(z_0)}{h}$ converges in $X$, proving that $x(\cdot)$ is strongly analytic.
 \end{proof}
+
+We prove now the theorem we promised about the resolvent.
+
+\begin{theorem}
+    Let $X$ be a Banach space and suppose $\op T \in \Lin{H}$. Then
+$\rho(\op T)$ is an open subset of $\C$ and $\op R_{\lambda}(\op T)$ is an analytic $\Lin{X}$-valued function on each component (maximal connected subset) of $D$. For any two points $\lambda, \mu \in \rho(\op T)$, $\op R_\lambda(\op T)$ and $\op R_\mu (\op T)$ commute and
+\begin{align}
+    \op R_\lambda(\op T) - \op R_\mu (\op T) = (\mu - \lambda) \op R_\mu (\op T) \op R_\lambda (\op T) \:.
+\end{align}
+\end{theorem}
+
+\begin{proof}
+    We begin with the following formal computation, temporarily ignoring questions of convergence. Let $\lambda_0 \in \rho(\op T)$.
+    \begin{align}
+        \frac{1}{\lambda - \op T} = \frac{1}{\lambda - \lambda_0 + (\lambda_0 + \op T)} = \left( \frac{1}{\lambda_0 - \op T} \right) \dfrac{1}{1 - \frac{\lambda_0 - \lambda}{\lambda_0 - \op T}} = \left( \frac{1}{\lambda_0 - \op T} \right) \left[ 1 + \sum_{n=1}^\infty \left( \frac{\lambda_0 - \lambda }{\lambda_0 - \op T} \right)^n\right] \:.
+    \end{align}
+    This suggest that we define \begin{align}
+        \op {\tilde R}_\lambda (\op T) = \op R_{\lambda_0} (\op T) \left\lbrace \op I + \sum_{n=1}^\infty (\lambda_0 - \lambda)^n [\op R_{\lambda_0} (\op T)]^n \right\rbrace \:.
+    \end{align}
+    Since \begin{align}
+        \norm{[\op R_{\lambda_0}(\op T)]^n} \leq \norm{\op R_{\lambda_0} (\op T)}^n \:,
+    \end{align}
+    the series on the right converges in the uniform operator topology if \begin{align}
+        |\lambda - \lambda_0| < \norm{\op R_{\lambda_0}(\op T)}^{-1} \:.
+    \end{align}
+    For such $\lambda$, $\op{\tilde R}_{\lambda}(\op T)$ is well defined, and it is easilly checked that \begin{align}
+        (\lambda \op I - \op T) \op{\tilde R}_{\lambda} (\op T) = \op I = \op{\tilde R}_{\lambda}(\op T)(\lambda \op I - \op T) \:.
+    \end{align}
+    This proves that $\lambda \in \rho(\op T)$ if $|\lambda - \lambda_0| < \norm{\op R_{\lambda_0}(\op T)}^{-1}$ and that $\op{\tilde R}_\lambda (\op T) = \op R_\lambda (\op T)$. Thus $\rho(\op T)$ is open. Since $\op R_\lambda (\op T)$ has a power series expansion, it is analytic.
+    
+    The expression \begin{align}
+        \op R_\lambda (\op T) - \op R_\mu (\op T) = \op R_\lambda (\op T) (\mu \op I - \op T) \op R_{\mu} \op T (\lambda \op I - \op T) \op R_\mu (\op T)
+    \end{align}
+    proves (VI.1). Interchanging $\mu$ and $\lambda$ shows that $\op R_\lambda( \op T)$ and $\op R_\mu (\op T)$ commute.
+\end{proof}
+
+Equation (VI.1) is called the first resolvent formula. A nice example if the use of complex analytic methods is given by the proof of the following corollary.
+
+\begin{corollary}
+    Let $X$ be a Banach space, $\op T \in \Lin{X}$. Then the spectrum of $\op T$ is not empty.
+\end{corollary}
+
+\begin{proof}
+    Formally
+    \begin{align}
+        \frac{1}{\lambda - \op T} = \frac{1}{\lambda} \frac{1}{1 - \op T/\lambda} = \frac{1}{\lambda} \left[ 0 + \sum_{n=1}^\infty \left(  \frac{\op T}{\lambda} \right)^n \right]
+    \end{align}
+    which suggests that for large values of $|\lambda|$,
+    \begin{align}
+        \op R_\lambda (\op T) = \frac{1}{\lambda} \left\lbrace \op I + \sum_{n=1}^\infty \left( \frac{\op T}{\lambda} \right)^n \right\rbrace \:.
+    \end{align}
+    If $|\lambda| > \norm{\op T}$, then the series on the right converges in norm ant it is easily checked that for such $\lambda$, its limit is indeed the inverse of $(\lambda \op I - \op T)$. Thus, as $|\lambda| \rightarrow \infty$, $\norm{\op R_\lambda ( \op T)} \rightarrow 0$. If $\sigma(\op T)$ were empty, $\op R_\lambda( \op T )$ would be zero which is a contradiction. Thus, $\sigma(\op T)$ is not empty.
+\end{proof}
+
+The series (VI.2) is called the \textbf{Neumann series} for $\op R_\lambda( \op T )$. The proof of the corollaryn shows that $\sigma(\op T)$ is contained in the closed disc of radius $\norm{\op T}$.
+Actually, we can say more about $\sigma(\op T)$.
+
+\begin{definition}
+    Let $r(\op T) = \sup_{\lambda \in \sigma(\op T)} |\lambda |$. $r(\op T)$ is called the \textbf{spectral radius} of $\op T$.
+\end{definition}
+
+\begin{theorem}
+    Let $X$ be a Banach space, $\op T \in \Lin{X}$. Then $\lim_{n \rightarrow \infty} \norm{\op T^n}^{1/n}$ exists and is equal to $r(\op T)$. If $X$ is a Hilbert space and $\op A$ is self-adjoint, then $r(\op A) = \norm{\op A}$.
+\end{theorem}
+
+\begin{proof}
+    The reader can check that $\lim_{n \rightarrow \infty} \norm{\op T^n}^{1/n}$ exists by following the clever subadditivity argument outlined in Problem 11. The crux of the proof of the theorem is to establish that the radius of convergence of the Laurent series of $\op R_\lambda( \op T )$ about $\infty$ is just $r(\op T)^{-1}$. First notice that the radius of convergence cannot be smaller than $r(\op T)^{-1}$ since we have proven that $\op R_\lambda( \op T )$ is analytic on $\rho(\op T)$ and $\set{\lambda : |\lambda| > r(\op T)} \subset \rho (\op T)$. On the other hand, (VI.2) is just the Laurent series about $\infty$ and we have seen that where it converges absolutely, $\op R_\lambda( \op T )$ exists. Since a Laurent series converges absolutely inside the circle of convergence, we conclude that the radius of convergence cannot be larger than $r(\op T)^{-1}$. That $r(\op T) = \lim_{n \rightarrow \infty} \norm{\op T^n}^{1/n}$ follows from the vector-valued version of Hadamard’s theorem which says that the radius of convergence of (VI.2) is just the inverse of
+    \begin{align}
+        \limsup_{n \rightarrow \infty} \norm{\op T^n}^{1/n} = \lim_{n \rightarrow \infty} \norm{\op T^n}^{1/n} \:.
+    \end{align}
+    Finally, if $X$ is a Hilbert space and $\op A$ is self-adjoint, then $\norm{\op A}^2 = \norm{\op A^2}$ by part (f) of Theorem VI.3. This implies that $\norm{\op A^{2^n}} = \norm{\op A}^{2^n}$ so \begin{align}
+        r(\op A) = \lim_{k \rightarrow \infty} \norm{\op A^k}^{1/k} = \lim_{n \rightarrow \infty} \norm{\op A^{2^n}}^{2^{-n}} = \norm{\op A} \:.
+    \end{align}
+\end{proof}
+
+The following theorem is sometimes useful in determining spectra.
+
+\begin{theorem}[Phillips]
+    Let $X$ be a Banach space, $\op T \in \Lin{X}$. Then $\sigma(\op T) = \sigma (\op T')$ and $\op R_\lambda (\op T') = \op R_\lambda (\op T)'$. If $\H$ is a Hilbert space, then $\sigma (\op T^\star) = \set{\lambda : \overset \lambda \in \sigma (\op T) }$ and $\op R_\lambda (\op T^\star) = \op R_\lambda (\op T)^\star$.
+\end{theorem}
+
+We note that the Hilbert space case follows from (d) of Theorem VI.3.
+We now work out in some detail an example which illustrates the various
+kinds of spectra.
+
