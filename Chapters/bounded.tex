@@ -87,3 +87,139 @@ If a sequence of operators $\op T_n$, on a Hilbert space has the property that $
 Let $\op T \in \Lin{X,Y}$. The set of vectors $x \in X$ so that $\op T x = 0$ is called the \textbf{kernel} of $\op T$, written $\Ker \op T$. The set of vectors $y \in Y$ that $y = \op T x$ for some $x \in X$ is called the \textbf{range} of $\op T$, written $ \Ran \op T$. Notice that both $\Ker \op T$ and $\Ran \op T$ are subspaces. Ker $\op T$ is necessarily closed, but $\Ran \op T$ may not be closed (Problem 7).
 
 \subsection{Adjoints}
+
+In this section we define adjoints of bounded operators on Banach and Hilbert spaces. The reader should be cautioned at the outset that the Hilbert space adjoint of an operator $\op T \in \Lin{H}$ is not equal to the Banach space adjoint although it is closely related to it.
+
+\begin{definition}
+    Let $X$ and $Y$ be Banach spaces, $\op T$ a bounded linear operator from $X$ to $Y$. The Banach space \textbf{adjoint} of $\op T$, denoted by $\op T'$, is the bounded linear operator from $Y^\star$ to $X^\star$ defined by
+    \begin{align}
+        (\op T' \ell)(x) = \ell(\op T x) \quad \text{ for all } \quad \ell \in Y^\star \:, \: x \in X \:.
+    \end{align}
+\end{definition}
+
+\begin{example}
+    Let $X = \ell_1 = Y$ and let $\op T$ be the right shift operator
+    \begin{align}
+        \op T (\xi_1, \xi_2, \cdots) = (0, \xi_1, \xi_2, \cdots) \:.
+    \end{align}
+    Then $\op T' : \ell_\infty \to \ell_\infty$ is the operator
+    \begin{align}
+        \op T'(\xi_1, \xi_2, \cdots) = (\xi_2, \xi_3, \cdots) \:.
+    \end{align}
+    In this example, $\norm{\op T} = 1 = \norm{\op T'}$. In fact the norms of $\op T$ and $\op T'$ are always equal:
+\end{example}
+
+\begin{theorem}
+    Let $X$ and $Y$ be Banach spaces. The map $\op T \mapsto \op T'$ is an isometric isomorphism of $\Lin{X,Y}$ into $\Lin{X^\star,Y^\star}$.
+\end{theorem}
+
+\begin{proof}
+    The map $\op T \mapsto \op T'$ is linear. The fact that $\op T'$ is bounded and that the map is an isometry follows from the computation ($\ell \in Y^\star$)
+    \begin{align}
+        \norm{\op T}_{\Lin{X,Y}} = \sup_{\norm{x} \leq 1} \norm{\op T x}_Y
+        = \sup_{\norm{\ell} \leq 1} \left( \sup_{\norm{x} \leq 1} |\ell(\op T x)|\right)
+        = \sup_{\norm{\ell} \leq 1} \norm{\op T' \ell} = \norm{\op T'}_{\Lin{Y^\star, X^\star}} \:.
+    \end{align}
+    The second equality uses a corollary of the Hahn Banach theorem.
+\end{proof}
+
+We are mostly interested in the case where $\op T$ is a bounded linear transformation of a Hilbert space $\H$ to itself. The Banach space adjoint of $\op T$ is then a mapping of $\H^\star$ to $\H^\star$. Let $\op C : \H \to \H^\star$ be the map which assigns to each $y \in \H$, the bounded linear functional $(y, \cdot)$ in $\H^\star$. $\op C$ is a \textit{conjugate} linear isometry which is surjective by the Riesz lemma. Now define a map $\op T^\star : \H \to \H$ by \begin{align}
+    \op T^\star = \op C^{-1} \op T' \op C \:.
+\end{align}
+Then $\op T^\star$ satisfies \begin{align}
+    (x, \op T y) = (\op C x)(\op T y)= (\op T' \op C x)(y) = (\op C^{-1} \op T' \op C x, y) = (\op T^\star x,y) \:.
+\end{align}
+
+\begin{theorem}
+    \begin{enumerate}
+        \item $\op T \mapsto \op T^\star$ is a conjugate linear isometric isomorphism of $\Lin{\H}$ onto $\Lin{\H}$.
+        \item $(\op T \op S)^\star = \op S^\star \op T^\star$.
+        \item $(\op T^\star)^\star = \op T$.
+        \item If $\op T$ has a bounded inverse, $\op T^{-1}$, then $\op T^\star$ has a bounded inverse and $(\op T^\star)^{-1} = (\op T^{-1})^\star$.
+        \item The map $\op T \mapsto \op T^\star$ is always continuous in the weak and uniform operator topologies but is only continuous in the strong operator topology if $\H$ is finite dimensional.
+        \item $\norm{\op T^\star \op T} = \norm{\op T}^2$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    (1) follows from Theorem VI.2 and the fact that $\op C$ is an isometry. (2) and (3) are easily checked. Since $\op T^{-1} \op T = \op I = \op T \op T^{-1}$, we have from (2)
+    \begin{align}
+        \op T^\star (\op T^{-1})^\star = \op I^\star = \op I = \op I^\star = (\op T^{-1})^\star \op T^\star
+    \end{align}
+    which proves (4).
+    TODO (5)
+\end{proof}
+
+\begin{definition}
+    A bounded operator $\op T$ on a Hilbert space is called \textbf{self-adjoint} if $\op T = \op T^\star$.
+\end{definition}
+
+Self-adjoint operators play a major role in functional analysis and mathematical physics and much of our time is devoted to studying them. Chapter VII is devoted to proving a structure theorem for bounded self-adjoint operators. In Chapter VIII we introduce unbounded self-adjoint operators and continue their study in Chapter X. We remind the reader that on $\C^n$, a linear transformation is self-adjoint if and only if its matrix in any orthonormal basis is invariant under the operation of reflection across the diagonal followed by complex conjugation.
+
+An important class of operators on Hilbert spaces is that of the projections.
+
+\begin{definition}
+    If $\op P \in \Lin{\H}$ and $\op P^2 = \op P$, then $\op P$ is called a \textbf{projection}. If in addition $\op P = \op P^\star$, then $\op P$ is called an \textbf{orthogonal projection}.
+\end{definition}
+
+Notice that the range of a projection is always a closed subspace on which $\op P$ acts like the identity. If in addition $\op P$ is orthogonal, then $\op P$ acts like the zero operator on $(\Ran \op P)^\bot$. If $x = y + z$, with $y \in \Ran \op P$ and $z \in (\Ran \op P)^\bot$, is the decomposition guaranteed by the projection theorem, then $\op P x =y$. $\op P$ is called the orthogonal projection onto $\Ran \op P$. Thus, the projection theorem sets up a one to one correspondence between orthogonal projections and closed subspaces. Since orthogonal projections arise more frequently than nonorthogonal ones, we normally use the word projection to mean orthogonal projection.
+
+\subsection{The spectrum}
+
+If $\op T$ is a linear transformation on $\C^n$, then the eigenvalues of $\op T$ are the complex numbers $\lambda$ 
+such that the determinant of $( \lambda \op J - \op T )$ is equal to zero. 
+The set of such $\lambda$ is called the spectrum of $\op T$. It can consist of at most $n$ points since $\det (\lambda \op I - \op T)$ is a polynomial of degree $n$. If $\lambda$ is not an eigenvalue, then $\lambda \op I - \op T$ has an inverse since $\det (\lambda \op I - \op T) \neq 0$.
+The spectral theory of operators on infinite-dimensional spaces is more complicated, more interesting, and very important for an understanding of the operators themselves.
+
+\begin{definition}
+    Let $\op T \in \Lin{X}$. A complex number $\lambda$ is said to be in the \textbf{resolvent set} $\rho(\op T)$ of $\op T$ if $\lambda \op I - \op T$ is a bijection with a bounded inverse. $\op R_{\lambda}(\op T) = (\lambda \op I - \op T)^{-1}$ is called the \textbf{resolvent} of $\op T$ at $\lambda$. If $\lambda \neq \rho(\op T)$, then $\lambda$ is said to be in the \textbf{spectrum} $\sigma(\op T)$ of $\op T$.
+\end{definition}
+
+We note that by the inverse mapping theorem, $\lambda \op I - \op T$ automatically has a bounded inverse if it is bijective. We distinguish two subsets of the spectrum.
+
+\begin{definition}
+    Let $\op T \in \Lin{H}$.
+    \begin{enumerate}
+        \item An $x \neq 0$ which satisfies $\op T x = \lambda x$ for some $\lambda \in \C$ is called an \textbf{eigenvector} of $\op T$; $\lambda$ is called the corresponding \textbf{eigenvalue}. If $\lambda$ is an eigenvalue, then $\lambda \op I - \op T$ is not injective so $\lambda$ is in the spectrum of $\op T$. The set of all eigenvalues is called the \textbf{point spectrum} of $\op T$.
+        \item If $\lambda$ is not an eigenvalue and if $\Ran (\lambda \op I - \op T)$ is not dense, then $\lambda$ is said to be in the \textbf{residual spectrum}.
+    \end{enumerate}
+\end{definition}
+
+At the end of this section we present an example which illustrates these kinds of spectra. The reason that we single out the residual spectrum is that it does not occur for a large class of operators, for example, for self-adjoint operators (see Theorem VI.8).
+
+The spectral analysis of operators is very important for mathematical physics. For example, in quantum mechanics the Hamiltonian is an unbounded self-adjoint operator on a Hilbert space. The point spectrum of the Hamil- tonian corresponds to the energy levels of bound states of the system. The rest of the spectrum plays an important role in the scattering theory of the system (see Chapter XII).
+
+We will shortly prove that the resolvent set $\rho(\op T)$ is open and that $\op R_{\lambda}(\op T)$ is an analytic operator-valued function on $\rho(\op T)$. This fact allows one to use complex analysis to study $\op R_{\lambda}(\op T)$ and thus to obtain information about $\op T$. We begin
+with a brief aside about vector-valued analytic functions.
+
+Let $X$ be a Banach space and let $D$ be a region in the complex plane, i.e. a connected open subset of $\C$. A function, $x(\cdot)$, defined on $D$ with values in $X$, is said to be \textbf{strongly analytic} at $z_0 \in D$ if the limit of $\frac{x(z_0+h)-x(z_0)}{h}$ exists in $X$ as $h$ goes to zero in $\C$. Starting from this point one can develop a theory of vector-valued analytic functions which is almost exactly parallel to the usual theory; in particular, a strongly analytic function has a norm-convergent Taylor series. We do not repeat this development here; see the notes for references. We do want to discuss one important point. There is another natural way to define Banach-valued analytic functions. Namely: a
+function $x(\cdot)$ on $D$ with values in $X$ is said to be \textbf{weakly analytic} if $\ell(x(\cdot))$ is a complex valued analytic function on $D$ for each $\ell \in X^\star$. Although this second definition of analytic is a priori weaker than the first, the two definitions are equivalent, a fact we will prove in a moment. This is very important, since weak analyticity is often much easier to check.
+
+\begin{lemma}
+    Let $X$ be a Banach space. Then a sequence $\set{x_n}$ is Cauchy if and only if $\set{\ell(x_n)}$ is Cauchy, uniformly for $\ell \in X^\star$, $\norm{\ell} \leq 1$.
+\end{lemma}
+
+\begin{proof}
+    If $\set{x_n}$ is Cauchy, then $|\ell(x_n) - \ell(x_m)| \leq \norm{x_n-x_m}$ for all $\ell$ with $\norm{\ell} \leq 1$, so $\set{\ell(x_n)}$ is Cauchy uniformly. Conversely,
+    \begin{align}
+        \norm{x_n-x_m} = \sup_{\norm{\ell} \leq 1} |\ell(x_n-x_m)| \:.
+    \end{align} 
+    Thus, if $\set{\ell(x_n)}$ is Cauchy, uniformly for $\norm{\ell} \leq 1$, then $\set{x_n}$ is norm-Cauchy.
+\end{proof}
+
+\begin{theorem}
+    Every weakly analytic function is strongly analytic.
+\end{theorem}
+
+\begin{proof}
+    Let $x(\cdot)$ be a weakly analytic function on $D$ with values in $X$.Let $z_0 \in D$ and suppose $\Gamma$ is a circle in $D$ containing $z_0$ whose interior is contained in $D$. If $\ell \in X^\star$ then $\ell(x(z))$ is analytic and
+    \begin{align}
+        \ell \left( \frac{x(z_0+h)-x(z_0)}{h}\right) - \der{}{z} \ell(x(z_0)) = \\
+        = \frac{1}{2 \pi \i} \oint_\Gamma \left[ \frac{1}{h} \left( \frac{1}{z-(z_0+h)} - \frac{1}{z-z_0} \right) - \frac{1}{(z-z_0)^2} \right] \ell (x(z)) \, \D z \:.
+    \end{align}
+    Since $\ell(x(z))$ is continuous on $\Gamma$ and $\Gamma$ is compact, $|\ell(x(z)) \leq C_\ell$ for all $z \in \Gamma$. Regarding $x(z)$ as a family of mappings $x(z) : X^\star \to \C$ we see that $x(z)$ is pointwise bounded at each $\ell$ so by the uniform boundedness theorem $\sup_{z \in \Gamma} \norm{x(z)} \leq C < \infty$. Thus \begin{align}
+        \left| \ell \left( \frac{x(z_0+h)-x(z_0)}{h}\right) - \der{}{z} \ell(x(z_0)) \right| \leq \\
+        \leq \frac{1}{2 \pi} \norm{\ell} \left( \sup_{z \in \Gamma} \norm{x(z)} \right) \oint_\Gamma \left| \frac{1}{(z-(z_0+h))(z-z_0)} - \frac{1}{(z-z_0)^2}\right| \, \D z
+    \end{align}
+
+\end{proof}
