@@ -301,10 +301,63 @@ Actually, we can say more about $\sigma(\op T)$.
 The following theorem is sometimes useful in determining spectra.
 
 \begin{theorem}[Phillips]
-    Let $X$ be a Banach space, $\op T \in \Lin{X}$. Then $\sigma(\op T) = \sigma (\op T')$ and $\op R_\lambda (\op T') = \op R_\lambda (\op T)'$. If $\H$ is a Hilbert space, then $\sigma (\op T^\star) = \set{\lambda : \overset \lambda \in \sigma (\op T) }$ and $\op R_\lambda (\op T^\star) = \op R_\lambda (\op T)^\star$.
+    Let $X$ be a Banach space, $\op T \in \Lin{X}$. Then $\sigma(\op T) = \sigma (\op T')$ and $\op R_\lambda (\op T') = \op R_\lambda (\op T)'$. If $\H$ is a Hilbert space, then $\sigma (\op T^\star) = \set{\lambda : \overline \lambda \in \sigma (\op T) }$ and $\op R_\lambda (\op T^\star) = \op R_\lambda (\op T)^\star$.
 \end{theorem}
 
 We note that the Hilbert space case follows from (d) of Theorem VI.3.
 We now work out in some detail an example which illustrates the various
 kinds of spectra.
 
+TODO-example
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c|c|c}
+        Operator & Spectrum & Point spectrum & Residual spectrum \\
+        \hline
+        $\op T$ & $|\lambda| \leq 1 $ & $|\lambda| < 1$ & $\emptyset$ \\
+        $\op T'$ & $|\lambda| \leq 1 $ & $\emptyset$ & $|\lambda| < 1$
+    \end{tabular}
+\end{table}
+
+As in the above example, one can prove in general
+\begin{proposition}
+    Let $X$ be a Banach space and $\op T \in \Lin{X}$. Then,
+    \begin{enumerate}
+        \item If $\lambda$ is in the residual spectrum of $\op T$, then $\lambda$ is in the point spectrum of $\op T'$.
+        \item If $\lambda$ is in the point spectrum of $\op T$, then $\lambda$ is in either the point or the residual spectrum of $\op T'$.
+    \end{enumerate}
+\end{proposition}
+
+Finally, we note:
+
+\begin{theorem}
+    Let $\op T$ be a self-adjoint operator on a Hilbert space $\H$. Then
+    \begin{enumerate}
+        \item $\op T$ has no residual spectrum.
+        \item $\sigma(\op T)$ is a subset of $\R$.
+        \item Eigenvectors corresponding to distinct eigenvalues of $\op T$ are orthogonal.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    If $\lambda$ and $\mu$ are real, we compute \begin{align}
+        \norm{[\op T - (\lambda + \i \mu)] x}^2 = \norm{(\op T - \lambda) x}^2 + \mu^2 \norm{x}^2 \:.
+    \end{align}
+    Thus, $\norm{[\op T - (\lambda + \i \mu)] x}^2 \geq \mu^2 \norm{x}^2$, so if $\mu \neq 0$, then $\op T - (\lambda + i \mu)$ is one to one and has a bounded inverse on its range, which is closed. If $\Ran (\op T - (\lambda + \i \mu)) \neq \H$, then, by the above proposition, $\lambda - \i \mu$ would be in the point spectrum of $\op T$, which is impossible by the inequality. Thus if $\mu \neq 0$, $\lambda + \i \mu$ is in $\rho(\op T)$. This proves (b). If a real $\lambda$ were in the residual spectrum of $\op T$, then $\overline \lambda = \lambda$ would be in the point spectrum of $\op T^\star = \op T$, which is impossible since the point and residual spectrum are disjoint by definition. This proves (a). The easy proof of (c) is left as an exercise (Problem 8).
+\end{proof}
+
+\subsection*{Problems}
+
+\begin{enumerate}
+    \item Prove that the weak operator topology is weaker than the strong operator topology which is weaker than the uniform operator topology.
+    \item Prove the statements in the example in Section VI.1.
+    \item \begin{enumerate}
+        \item Let $X$ and $Y$ be Banach spaces. Prove that if $\op T_n \in \Lin{X,Y}$ and $\set{\op T_n x}$ is a Cauchy sequence for each $x \in X$, then there exists a $\op T \in \Lin{X,Y}$ so that $\op T_n \rightarrow \op T$ strongly.
+        \item Is the theorem in (a) true if $\op T_n$ is replaced by a net $\op T_\alpha$?
+    \end{enumerate}
+
+    \item \begin{enumerate}
+        \item Let $X$ and $Y$ be Banach spaces. Prove that a theorem for $\Lin{X,Y}$ analogous to Theorem VI.1 holds if $Y$ is weakly sequentially complete (which means that every weakly Cauchy sequence has a weak limit.)
+    \end{enumerate}
+\end{enumerate}
